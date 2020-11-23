@@ -2,6 +2,7 @@ package extractor;
 
 import org.w3c.dom.*;
 import javax.xml.xpath.*;
+import javax.sound.sampled.TargetDataLine;
 import javax.xml.parsers.*;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -48,16 +49,19 @@ public class Extractor {
 			infoHolder.setEntityName(className);
 			infoHolder.setAttributes(extractAttributes(doc, xpath, className));
 			infoHolder.setSerializableMethods(extractSerializableMethods(doc, xpath, className));
+			infoHolder.setDatabaseMethods(extractDatabaseMethods(doc, xpath, className));
 			IH.add(infoHolder);
 		}
 //		testing the methods
-		for (int i =0; i<IH.size();i++) {
-			System.out.println(IH.get(i).getEntityName());
-			List<String> test = IH.get(i).getSerializableMethods();
-			for (int j =0; j<test.size();j++) {
-				System.out.println(test.get(j));
-			}
-		}
+//		for (int i =0; i<IH.size();i++) {
+//			List<String> test = IH.get(i).getDatabaseMethods();
+//			if(test.size()>0) {				
+//				System.out.println(IH.get(i).getEntityName());
+//				for (int j =0; j<test.size();j++) {
+//					System.out.println(test.get(j));
+//				}
+//			}
+//		}
 	}
 
 //	extracting names of classes from the xml file
@@ -144,6 +148,35 @@ public class Extractor {
 			}
 		}
 		return serializables;
+	}
+//	extract methods that declars sql object or takes in  
+	private static List<String> extractDatabaseMethods(Document doc, XPath xpath, String className) {
+		// TODO Auto-generated method stub
+		NodeList functions = null;
+		List <String> methods = new ArrayList <String>();
+		try {
+			String expr = "//class[name='"+ className+"']/block/function| "
+					+ "//interface[name='"+ className+"']/block/function";
+			functions = (NodeList) xpath.compile(expr).evaluate(doc, XPathConstants.NODESET);
+		}catch(XPathExpressionException e) {
+			e.printStackTrace();
+		}
+//		for each function check if it contain sql then it saves the method declaration and signature
+//		to the methods list as string.
+		for (int i =0; i<functions.getLength(); i++) {
+			String node = functions.item(i).getTextContent();
+			if (node.toLowerCase().contains("sql") | node.toLowerCase().contains("database") | node.toLowerCase().contains("mongo")) {
+				String method = "";
+				NodeList methodNode = functions.item(i).getChildNodes();
+//				we exclude the last child node (<block>) which is the the body of the method 
+//				so we only save the method declaration and signature.
+				for(int j = 0; j < methodNode.getLength()-1; j++) {
+					method += methodNode.item(j).getTextContent();
+				}
+				methods.add(method);
+			}
+		}
+		return methods;
 	}
 	
 //	private static List<String> SPClassNames(Document doc, XPath xpath) {
