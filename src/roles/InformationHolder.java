@@ -2,8 +2,9 @@ package roles;
 
 import java.util.*;
 
+
 public class InformationHolder extends RoleStereotype {
-	private String entityName = null;
+	private String entityName;
 	private List<String> attributes = null;
 	private List<String> serializableMethods = null;
 	private List<String> databaseMethods = null;
