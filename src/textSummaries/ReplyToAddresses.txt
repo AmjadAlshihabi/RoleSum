@@ -1,0 +1,11 @@
+the ReplyToAddresses Information Holder is responsible for:
+managing and holding information about:
+to
+cc
+
+Providing information to the following objects:
+ReplyToParser
+ReplyToParserTest
+RecipientPresenter
+RecipientPresenterTest
+

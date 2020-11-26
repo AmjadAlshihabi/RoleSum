@@ -1,0 +1,8 @@
+the RecipientTokenSpan Information Holder is responsible for:
+managing and holding information about:
+view
+initialLayoutPerformed
+
+Providing information to the following objects:
+RecipientSelectView
+

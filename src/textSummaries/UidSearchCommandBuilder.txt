@@ -1,0 +1,13 @@
+the UidSearchCommandBuilder Information Holder is responsible for:
+managing and holding information about:
+queryString
+performFullTextSearch
+requiredFlags
+forbiddenFlags
+
+Managing database tasks through the following methods
+public UidSearchCommandBuilder queryString(String queryString) 
+public UidSearchCommandBuilder performFullTextSearch(boolean performFullTextSearch) 
+public UidSearchCommandBuilder requiredFlags(Set<Flag> requiredFlags) 
+public UidSearchCommandBuilder forbiddenFlags(Set<Flag> forbiddenFlags) 
+

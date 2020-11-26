@@ -1,0 +1,4 @@
+the OAuth2TokenProviderAuthCallback Information Holder is responsible for:
+Providing information to the following objects:
+OAuth2TokenProvider
+

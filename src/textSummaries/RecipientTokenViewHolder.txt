@@ -1,0 +1,14 @@
+the RecipientTokenViewHolder Information Holder is responsible for:
+managing and holding information about:
+vName
+vContactPhoto
+cryptoStatusRed
+cryptoStatusOrange
+cryptoStatusGreen
+cryptoStatusSimple
+cryptoStatusSimpleEnabled
+cryptoStatusSimpleError
+
+Providing information to the following objects:
+RecipientSelectView
+

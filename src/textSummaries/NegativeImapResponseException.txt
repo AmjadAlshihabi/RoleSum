@@ -1,0 +1,9 @@
+the NegativeImapResponseException Information Holder is responsible for:
+managing and holding information about:
+serialVersionUID
+responses
+alertText
+
+Providing information to the following objects:
+ImapResponseParser
+

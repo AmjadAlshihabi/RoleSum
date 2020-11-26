@@ -1,0 +1,10 @@
+the NegativeSmtpReplyException Information Holder is responsible for:
+managing and holding information about:
+serialVersionUID
+replyCode
+replyText
+
+Providing information to the following objects:
+EnhancedNegativeSmtpReplyException
+SmtpTransport
+

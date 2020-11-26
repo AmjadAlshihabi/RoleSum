@@ -1,0 +1,23 @@
+the NotificationHolder Information Holder is responsible for:
+managing and holding information about:
+notificationId
+content
+
+Providing information to the following objects:
+AddNotificationResult
+BaseNotifications
+DeviceNotifications
+LockScreenNotification
+NewMailNotifications
+NotificationData
+RemoveNotificationResult
+WearNotifications
+AddNotificationResultTest
+BaseNotificationsTest
+DeviceNotificationsTest
+LockScreenNotificationTest
+NewMailNotificationsTest
+NotificationDataTest
+RemoveNotificationResultTest
+WearNotificationsTest
+

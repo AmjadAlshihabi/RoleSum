@@ -1,0 +1,21 @@
+the Responses Information Holder is responsible for:
+managing and holding information about:
+CAPABILITY
+NAMESPACE
+LIST
+LSUB
+OK
+NO
+BAD
+PREAUTH
+BYE
+EXISTS
+EXPUNGE
+PERMANENTFLAGS
+COPYUID
+SEARCH
+UIDVALIDITY
+
+Providing information to the following objects:
+ImapResponseParser
+

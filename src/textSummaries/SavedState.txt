@@ -1,0 +1,11 @@
+the SavedState Information Holder is responsible for:
+managing and holding information about:
+CREATOR
+mFolded
+additionalHeadersVisible
+CREATOR
+
+Providing information to the following objects:
+FoldableLinearLayout
+MessageHeader
+

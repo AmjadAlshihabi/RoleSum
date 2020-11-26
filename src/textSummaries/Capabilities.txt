@@ -1,0 +1,17 @@
+the Capabilities Information Holder is responsible for:
+managing and holding information about:
+IDLE
+CONDSTORE
+SASL_IR
+AUTH_XOAUTH2
+AUTH_CRAM_MD5
+AUTH_PLAIN
+AUTH_EXTERNAL
+LOGINDISABLED
+NAMESPACE
+COMPRESS_DEFLATE
+STARTTLS
+SPECIAL_USE
+UID_PLUS
+LIST_EXTENDED
+

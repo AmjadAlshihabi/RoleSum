@@ -1,0 +1,21 @@
+the AttachmentViewInfo Information Holder is responsible for:
+managing and holding information about:
+UNKNOWN_SIZE
+mimeType
+displayName
+size
+internalUri
+inlineAttachment
+part
+contentAvailable
+
+Providing information to the following objects:
+AttachmentResolver
+AttachmentInfoExtractor
+MessageViewInfoExtractorTest
+AttachmentInfoExtractorTest
+AttachmentController
+AttachmentView
+LockedAttachmentView
+MessageContainerView
+

@@ -1,0 +1,10 @@
+the FileBackedBody Information Holder is responsible for:
+managing and holding information about:
+file
+encoding
+
+Serialization of object, list of overriden method:
+getInputStream()throws MessagingException
+setEncoding(String encoding)throws MessagingException
+writeTo(OutputStream out)throws IOException, MessagingException
+

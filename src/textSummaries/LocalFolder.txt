@@ -1,0 +1,54 @@
+the LocalFolder Information Holder is responsible for:
+managing and holding information about:
+MAX_BODY_SIZE_FOR_DATABASE
+INVALID_MESSAGE_PART_ID
+localStore
+attachmentInfoExtractor
+encryptionExtractor
+status
+lastChecked
+type
+serverId
+name
+databaseId
+visibleLimit
+prefId
+displayClass
+syncClass
+pushClass
+notifyClass
+isInTopGroup
+isIntegrate
+moreMessages
+localOnly
+
+Managing database tasks through the following methods
+public long getDatabaseId() 
+public void open() throws MessagingException 
+void open(Cursor cursor) throws MessagingException 
+public boolean isOpen() 
+public void setType(FolderType type) 
+public boolean exists() throws MessagingException 
+public int getMessageCount() throws MessagingException 
+public int getUnreadMessageCount() throws MessagingException 
+private void updateFolderColumn(final String column, final Object value) throws MessagingException 
+public void setMoreMessages(MoreMessages moreMessages) throws MessagingException 
+public void fetch(final List<LocalMessage> messages, final FetchProfile fp, final MessageRetrievalListener<LocalMessage> listener)
+    throws MessagingException 
+private void loadMessageParts(SQLiteDatabase db, LocalMessage message) throws MessagingException 
+private void loadMessagePart(LocalMessage message, Map<Long, Part> partById, Cursor cursor)
+            throws MessagingException 
+public String getMessageUidById(final long id) throws MessagingException 
+public LocalMessage getMessage(final String uid) throws MessagingException 
+@Nullable
+    public LocalMessage getMessage(long messageId) throws MessagingException 
+
+Providing information to the following objects:
+LocalMessage
+NotificationController
+SyncNotifications
+EmailProviderCacheTest
+MessagingControllerTest
+SyncNotificationsTest
+MlfUtils
+

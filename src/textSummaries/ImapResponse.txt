@@ -1,0 +1,22 @@
+the ImapResponse Information Holder is responsible for:
+managing and holding information about:
+serialVersionUID
+callback
+commandContinuationRequested
+tag
+
+Providing information to the following objects:
+ImapConnection
+ImapResponseCallback
+ImapResponseParser
+ImapUtility
+NegativeImapResponseException
+AlertResponseTest
+CapabilityResponseTest
+ImapResponseHelper
+ImapResponseParserTest
+NamespaceResponseTest
+PermanentFlagsResponseTest
+ResponseCodeExtractorTest
+SelectOrExamineResponseTest
+

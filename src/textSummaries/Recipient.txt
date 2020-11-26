@@ -1,0 +1,23 @@
+the Recipient Information Holder is responsible for:
+managing and holding information about:
+contactId
+contactLookupKey
+address
+addressLabel
+timesContacted
+sortKey
+starred
+photoThumbnailUri
+cryptoStatus
+
+Providing information to the following objects:
+AlternateRecipientAdapter
+AlternateRecipientListener
+RecipientAdapter
+RecipientLoader
+RecipientPresenter
+RecipientSelectView
+RecipientTokenSpan
+RecipientLoaderTest
+RecipientPresenterTest
+

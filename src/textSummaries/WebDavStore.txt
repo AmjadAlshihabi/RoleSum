@@ -1,0 +1,43 @@
+the WebDavStore Information Holder is responsible for:
+managing and holding information about:
+draftsFolderProvider
+mConnectionSecurity
+username
+alias
+password
+baseUrl
+hostname
+port
+path
+formBasedAuthPath
+mailboxPath
+trustManagerFactory
+httpClientFactory
+httpClient
+httpContext
+authString
+authCookies
+authenticationType
+cachedLoginUrl
+sendFolder
+folderList
+
+Managing database tasks through the following methods
+private String getFolderListXml() 
+String getMessageCountXml(String messageState) 
+String getMessageEnvelopeXml(String[] uids) 
+String getMessagesXml() 
+String getMessageUrlsXml(String[] uids) 
+String getMessageFlagsXml(String[] uids) throws MessagingException 
+
+Providing information to the following objects:
+CommandMoveOrCopyMessages
+CommandSetFlag
+WebDavStoreUriCreator
+WebDavStoreUriDecoder
+WebDavSync
+WebDavFolder
+WebDavTransport
+WebDavFolderTest
+WebDavStoreTest
+

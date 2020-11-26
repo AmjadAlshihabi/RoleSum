@@ -1,0 +1,5 @@
+the Html Information Holder is responsible for:
+Providing information to the following objects:
+MessageExtractor
+Viewable
+

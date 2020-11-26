@@ -1,0 +1,10 @@
+the Textual Information Holder is responsible for:
+managing and holding information about:
+mPart
+
+Providing information to the following objects:
+Viewable
+Text
+Flowed
+Html
+

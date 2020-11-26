@@ -1,0 +1,8 @@
+the SpinnerOption Information Holder is responsible for:
+managing and holding information about:
+value
+label
+
+Providing information to the following objects:
+AccountSetupOptions
+

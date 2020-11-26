@@ -1,0 +1,1 @@
+the ImapResponseParserException Information Holder is responsible for:

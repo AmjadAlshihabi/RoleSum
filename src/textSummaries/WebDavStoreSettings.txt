@@ -1,0 +1,18 @@
+the WebDavStoreSettings Information Holder is responsible for:
+managing and holding information about:
+ALIAS_KEY
+PATH_KEY
+AUTH_PATH_KEY
+MAILBOX_PATH_KEY
+alias
+path
+authPath
+mailboxPath
+
+Providing information to the following objects:
+AccountSetupIncoming
+WebDavStoreUriDecoder
+WebDavStore
+WebDavTransport
+WebDavStoreTest
+

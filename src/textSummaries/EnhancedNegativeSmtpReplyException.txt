@@ -1,0 +1,6 @@
+the EnhancedNegativeSmtpReplyException Information Holder is responsible for:
+managing and holding information about:
+statusCodeClass
+statusCodeSubject
+statusCodeDetail
+

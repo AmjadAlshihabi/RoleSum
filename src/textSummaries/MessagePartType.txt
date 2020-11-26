@@ -1,0 +1,10 @@
+the MessagePartType Information Holder is responsible for:
+managing and holding information about:
+UNKNOWN
+ALTERNATIVE_PLAIN
+ALTERNATIVE_HTML
+TEXT
+RELATED
+ATTACHMENT
+HIDDEN_ATTACHMENT
+

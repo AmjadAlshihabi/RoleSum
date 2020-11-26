@@ -1,0 +1,5 @@
+the DebugStatus Information Holder is responsible for:
+Providing information to the following objects:
+K9MailLib
+WritableDebugStatus
+

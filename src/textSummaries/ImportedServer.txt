@@ -1,0 +1,17 @@
+the ImportedServer Information Holder is responsible for:
+managing and holding information about:
+type
+host
+port
+connectionSecurity
+authenticationType
+username
+password
+clientCertificateAlias
+extras
+
+Providing information to the following objects:
+SettingsImporter
+ImportedServerSettings
+ImportedAccount
+

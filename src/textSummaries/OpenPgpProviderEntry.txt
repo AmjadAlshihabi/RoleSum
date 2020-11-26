@@ -1,0 +1,11 @@
+the OpenPgpProviderEntry Information Holder is responsible for:
+managing and holding information about:
+packageName
+simpleName
+icon
+intent
+
+Providing information to the following objects:
+OpenPgpAppSelectDialog
+OpenPgpAppSelectFragment
+

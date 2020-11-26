@@ -1,0 +1,11 @@
+the GroupedIds Information Holder is responsible for:
+managing and holding information about:
+ids
+idGroups
+
+Providing information to the following objects:
+IdGrouper
+ImapCommandSplitter
+ImapConnection
+ImapCommandSplitterTest
+

@@ -4,6 +4,9 @@ import org.w3c.dom.*;
 
 import javax.xml.xpath.*;
 import javax.xml.parsers.*;
+
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 import org.xml.sax.SAXException;
@@ -47,8 +50,9 @@ public class Extractor {
 			infoHolder.setAttributes(extractAttributes(doc, xpath, className));
 			infoHolder.setSerializableMethods(extractSerializableMethods(doc, xpath, className));
 			infoHolder.setDatabaseMethods(extractDatabaseMethods(doc, xpath, className));
+			infoHolder.setDeclarations(extractDeclarations(doc, xpath, className));
 			summarizeIH(infoHolder);
-			IH.add(infoHolder);
+//			IH.add(infoHolder);
 		}
 		
 //		testing the methods
@@ -96,7 +100,38 @@ public class Extractor {
 					+ "%(databaseMethods)\n";
 			template = template.replace("%(databaseMethods)", databaseMethods);
 		}
-		System.out.print(template);
+		if(IHclass.getDeclarations().size()>0) {
+			String declarationClasses = "";
+			List <String> declarationsList = IHclass.getDeclarations();
+			for (int i = 0; i<declarationsList.size(); i++) {
+				declarationClasses += declarationsList.get(i) + "\n";
+			}
+			template += "Providing information to the following objects:\n"
+					+ "%(declarationClasses)\n";
+			template = template.replace("%(declarationClasses)", declarationClasses);
+		}
+//		System.out.print(template);
+		try {
+		      File file = new File("./src/textSummaries/"+IHclass.getEntityName() + ".txt");
+		      if (file.createNewFile()) {
+		        System.out.println("File created: " + file.getName());
+		      } else {
+		        System.out.println("File already exists.");
+		      }
+		    } catch (IOException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
+		
+		try {
+		      FileWriter templateWriter = new FileWriter("./src/textSummaries/"+IHclass.getEntityName() + ".txt");
+		      templateWriter.write(template);
+		      templateWriter.close();
+		      System.out.println("Successfully wrote to the file.");
+		    } catch (IOException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
 	}
 //	extracting names of classes from the xml file
 	private static List<String> IHClassNames(Document doc, XPath xpath) {
@@ -122,9 +157,9 @@ public class Extractor {
 		NodeList attributesNodes = null;
 		List<String> attributes = new ArrayList<String>();
 		try {
-			String expr = "//class[name='"+ className+"']/block/decl_stmt//name | "
-					+ "//enum[name='"+ className+"']/block/decl_stmt//name |"
-					+ "//interface[name='"+ className+"']/block/decl_stmt//name";
+			String expr = "//class[name='"+ className+"']/block/decl_stmt/decl/name | "
+					+ "//enum[name='"+ className+"']/block/decl_stmt/decl/name |"
+					+ "//interface[name='"+ className+"']/block/decl_stmt/decl/name";
 			attributesNodes = (NodeList) xpath.compile(expr).evaluate(doc, XPathConstants.NODESET);
 			for (int i = 0; i<attributesNodes.getLength(); i++) {
 				String item = attributesNodes.item(i).getTextContent();
@@ -150,44 +185,72 @@ public class Extractor {
 		NodeList serializableMethods = null;
 //		list to hold a signatures of the overriden functions in the given className;
 		List<String> serializables = new ArrayList<String>();
-//		extract the extended or implemented classes for the className passed in the argument
+		NodeList methods = null;
+		NodeList names = null;
 		try {
-			String expr = "//class[name='"+ className+"']/super_list/implements/super/name | "
-					+ "//enum[name='"+ className+"']/super_list/implements/super/name | "
-					+ "//interface[name='"+ className+"']/super_list/implements/super/name |"
-							+ "//interface[name='"+ className+"']/super_list/extends/name";
-			serializableNodes = (NodeList) xpath.compile(expr).evaluate(doc, XPathConstants.NODESET);
+			String expr = "//class[name='"+ className+"']/block/function[annotation/name='Override']/type/following-sibling::*[not(self::block)]";
+			methods = (NodeList) xpath.compile(expr).evaluate(doc, XPathConstants.NODESET);
 		}catch(XPathExpressionException e) {
 			e.printStackTrace();
 		}
-//		check if the class or interface implements/extends Serializable or Parcelable interfaces
-		for(int i = 0; i<serializableNodes.getLength(); i++) {
-			String serializable = serializableNodes.item(i).getTextContent();
-			if(serializable.equals("Serializable") | serializable.equals("Parcelable")) {
-				try {
-					String expr = "//class[name='"+ className+"']/block/function[annotation/name='Override']/*[not(self::block)] | "
-							+ "//enum[name='"+ className+"']/block/function[annotation/name='Override']/*[not(self::block)] | "
-							+ "//interface[name='"+ className+"']/block/function[annotation/name='Override']/*[not(self::block)]";
-					serializableMethods = (NodeList) xpath.compile(expr).evaluate(doc, XPathConstants.NODESET);
-//					System.out.println("the length is" + serializableMethods.getLength());
-				}catch(XPathExpressionException e) {
-					e.printStackTrace();
-				}
+		String method=""; 
+		for(int i = 0; i<methods.getLength(); i++) {
+			method += methods.item(i).getTextContent();
+			if(methods.item(i).getTextContent().contains("throws")) {
+				serializables.add(method);
+				method="";
 			}
+			
 		}
-//		saving the functions' signature for the className as strings;
-		if(serializableMethods!=null) {
-			String method = "";
-			for(int i = 0; i<serializableMethods.getLength(); i++) {
-//				List<String> method = new ArrayList<String>();
-				method += serializableMethods.item(i).getTextContent() + " ";
-				if(serializableMethods.item(i).getNodeName().equals("parameter_list")) {
-					serializables.add(method);					
-					method = "";
-				}
-//				serializables.add(serializableMethods.item(i).getTextContent());
-			}
-		}
+//		for(int i = 0; i<serializables.size(); i++) {
+//			System.out.println(serializables.get(i));
+//		}
+//		System.out.println(methods.item(1))
+//		if(className.equals("FileBackedBody")) System.out.print(method);
+//		serializables.add(method);
+//			for(int i = 0; i<methods.getLength(); i++) {
+////				names = (NodeList) xpath.compile("//name").evaluate(methods.item(i), XPathConstants.NODESET);
+////				System.out.println(methods.item(i).getTextContent());
+//				serializables.add(methods.item(i).getTextContent());
+//			}
+//		extract the extended or implemented classes for the className passed in the argument
+//		try {
+//			String expr = "//class[name='"+ className+"']/super_list/implements/super/name | "
+//					+ "//enum[name='"+ className+"']/super_list/implements/super/name | "
+//					+ "//interface[name='"+ className+"']/super_list/implements/super/name |"
+//							+ "//interface[name='"+ className+"']/super_list/extends/name";
+//			serializableNodes = (NodeList) xpath.compile(expr).evaluate(doc, XPathConstants.NODESET);
+//		}catch(XPathExpressionException e) {
+//			e.printStackTrace();
+//		}
+////		check if the class or interface implements/extends Serializable or Parcelable interfaces
+//		for(int i = 0; i<serializableNodes.getLength(); i++) {
+//			String serializable = serializableNodes.item(i).getTextContent();
+//			if(serializable.equals("Serializable") | serializable.equals("Parcelable")) {
+//				try {
+//					String expr = "//class[name='"+ className+"']/block/function[annotation/name='Override']/*[not(self::block)] | "
+//							+ "//enum[name='"+ className+"']/block/function[annotation/name='Override']/*[not(self::block)] | "
+//							+ "//interface[name='"+ className+"']/block/function[annotation/name='Override']/*[not(self::block)]";
+//					serializableMethods = (NodeList) xpath.compile(expr).evaluate(doc, XPathConstants.NODESET);
+////					System.out.println("the length is" + serializableMethods.getLength());
+//				}catch(XPathExpressionException e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		}
+////		saving the functions' signature for the className as strings;
+//		if(serializableMethods!=null) {
+//			String method = "";
+//			for(int i = 0; i<serializableMethods.getLength(); i++) {
+////				List<String> method = new ArrayList<String>();
+//				method += serializableMethods.item(i).getTextContent() + " ";
+//				if(serializableMethods.item(i).getNodeName().equals("parameter_list")) {
+//					serializables.add(method);					
+//					method = "";
+//				}
+////				serializables.add(serializableMethods.item(i).getTextContent());
+//			}
+//		}
 		return serializables;
 	}
 //	extract methods that declars sql object or takes in  
@@ -232,6 +295,41 @@ public class Extractor {
 			}
 		}
 		return methods;
+	}
+	
+	private static List <String> extractDeclarations(Document doc, XPath xpath, String className){
+			NodeList classes = null;
+			List <String> declarations = new ArrayList<String>();
+			try {
+//				String expr= "//class[name='"+ className+"']/block/block_content/function/decl_stmt/decl/type[name]";
+				String expr= "//class | //interface";
+//				String expr = "//class/block/*[name='"+ className+"']/ancestor::class/name";
+				classes = (NodeList) xpath.compile(expr).evaluate(doc, XPathConstants.NODESET);
+			}catch(XPathExpressionException e) {
+				e.printStackTrace();
+			}
+			for (int i =0; i<classes.getLength(); i++) {
+//				declarations.add(classes.item(i).getTextContent());
+//				System.out.println(classes.item(i).getTextContent());
+					if (classes.item(i).getTextContent().contains(" "+className+" ")) {		
+						NodeList childNodes = classes.item(i).getChildNodes();
+						for(int j = 0; j<childNodes.getLength(); j++) {
+							Node childNode = childNodes.item(j);
+							if (childNode.getNodeName().equals("name") && !className.equals(childNode.getTextContent())) {								
+//								System.out.println(className +" is declared in "+ childNode.getTextContent());
+								declarations.add(childNode.getTextContent());
+							}
+					}
+				}
+//					System.out.println(cnt);
+			}
+//			if (declarations.size()>0) {				
+//				System.out.println("the " +className+" is declared in: ");
+//				for (int i =0; i<declarations.size(); i++) {
+//					System.out.println(declarations.get(i));
+//				}
+//			}
+		return declarations;
 	}
 //	public static String getMethodName(String str) {
 //		String p = null; 

@@ -1,0 +1,14 @@
+the NotificationSetting Information Holder is responsible for:
+managing and holding information about:
+ringEnabled
+ringtoneUri
+ledEnabled
+ledColor
+vibrateEnabled
+vibratePattern
+vibrateTimes
+
+Providing information to the following objects:
+DeviceNotifications
+DeviceNotificationsTest
+

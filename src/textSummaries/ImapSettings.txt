@@ -1,0 +1,7 @@
+the ImapSettings Information Holder is responsible for:
+Providing information to the following objects:
+ImapConnection
+ImapStore
+StoreImapSettings
+SimpleImapSettings
+

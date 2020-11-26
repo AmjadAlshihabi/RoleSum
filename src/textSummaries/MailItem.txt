@@ -1,0 +1,14 @@
+the MailItem Information Holder is responsible for:
+managing and holding information about:
+date
+sender
+preview
+subject
+unread
+hasAttachment
+uri
+color
+
+Providing information to the following objects:
+MessageListRemoteViewFactory
+

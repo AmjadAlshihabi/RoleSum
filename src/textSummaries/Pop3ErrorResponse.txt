@@ -1,0 +1,4 @@
+the Pop3ErrorResponse Information Holder is responsible for:
+managing and holding information about:
+serialVersionUID
+

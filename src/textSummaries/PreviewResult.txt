@@ -1,0 +1,9 @@
+the PreviewResult Information Holder is responsible for:
+managing and holding information about:
+previewType
+previewText
+
+Providing information to the following objects:
+MessagePreviewCreator
+MessagePreviewCreatorTest
+

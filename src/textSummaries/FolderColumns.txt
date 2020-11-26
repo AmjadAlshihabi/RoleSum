@@ -1,0 +1,21 @@
+the FolderColumns Information Holder is responsible for:
+managing and holding information about:
+ID
+NAME
+LAST_UPDATED
+UNREAD_COUNT
+VISIBLE_LIMIT
+STATUS
+PUSH_STATE
+LAST_PUSHED
+FLAGGED_COUNT
+INTEGRATE
+TOP_GROUP
+POLL_CLASS
+PUSH_CLASS
+DISPLAY_CLASS
+SERVER_ID
+
+Providing information to the following objects:
+EmailProvider
+

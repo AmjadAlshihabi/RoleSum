@@ -1,0 +1,7 @@
+the ImportedServerSettings Information Holder is responsible for:
+managing and holding information about:
+importedServer
+
+Providing information to the following objects:
+SettingsImporter
+

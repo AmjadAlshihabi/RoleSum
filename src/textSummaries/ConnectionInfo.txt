@@ -1,0 +1,10 @@
+the ConnectionInfo Information Holder is responsible for:
+managing and holding information about:
+statusCode
+requiredAuthType
+guessedAuthUrl
+redirectUrl
+
+Providing information to the following objects:
+WebDavStore
+

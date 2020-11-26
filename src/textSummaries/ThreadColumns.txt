@@ -1,0 +1,10 @@
+the ThreadColumns Information Holder is responsible for:
+managing and holding information about:
+ID
+MESSAGE_ID
+ROOT
+PARENT
+
+Providing information to the following objects:
+EmailProvider
+

@@ -1,0 +1,21 @@
+the BodyPart Information Holder is responsible for:
+managing and holding information about:
+serverExtra
+parent
+
+Providing information to the following objects:
+MessageCryptoStructureDetector
+LocalFolder
+MimePartStreamParser
+PartBuilder
+MessageCryptoStructureDetectorTest
+AttachmentResolverTest
+MessageViewInfoExtractorTest
+MessageCreationHelper
+TextPartFinderTest
+MessageCreationHelper
+Multipart
+MessageExtractor
+MimeBodyPart
+TestMessageConstructionUtils
+

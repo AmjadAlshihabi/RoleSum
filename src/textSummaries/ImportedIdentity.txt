@@ -1,0 +1,10 @@
+the ImportedIdentity Information Holder is responsible for:
+managing and holding information about:
+name
+email
+description
+settings
+
+Providing information to the following objects:
+SettingsImporter
+

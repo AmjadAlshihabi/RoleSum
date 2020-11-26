@@ -1,0 +1,8 @@
+the SettingsImportExportException Information Holder is responsible for:
+managing and holding information about:
+serialVersionUID
+
+Providing information to the following objects:
+SettingsImporter
+SettingsImporterTest
+

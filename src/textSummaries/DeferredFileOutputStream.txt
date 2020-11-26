@@ -1,0 +1,10 @@
+the DeferredFileOutputStream Information Holder is responsible for:
+managing and holding information about:
+fileFactory
+currentOutputStream
+outputFile
+
+Serialization of object, list of overriden method:
+getStream()throws IOException
+thresholdReached()throws IOException
+

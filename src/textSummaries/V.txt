@@ -1,0 +1,8 @@
+the V Information Holder is responsible for:
+managing and holding information about:
+version
+description
+
+Providing information to the following objects:
+Settings
+

@@ -1,0 +1,8 @@
+the AccountHolder Information Holder is responsible for:
+managing and holding information about:
+name
+chip
+
+Providing information to the following objects:
+IdentityAdapter
+

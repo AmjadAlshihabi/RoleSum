@@ -1,0 +1,21 @@
+the MessageViewInfo Information Holder is responsible for:
+managing and holding information about:
+message
+isMessageIncomplete
+rootPart
+subject
+isSubjectEncrypted
+attachmentResolver
+text
+cryptoResultAnnotation
+attachments
+extraText
+extraAttachments
+
+Providing information to the following objects:
+MessageViewInfoExtractor
+MessageViewInfoExtractorTest
+MessageCompose
+QuotedMessagePresenter
+LocalMessageExtractorLoader
+

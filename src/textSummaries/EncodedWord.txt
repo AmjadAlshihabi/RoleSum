@@ -1,0 +1,9 @@
+the EncodedWord Information Holder is responsible for:
+managing and holding information about:
+charset
+encoding
+data
+
+Providing information to the following objects:
+DecoderUtil
+

@@ -1,0 +1,23 @@
+the TextBody Information Holder is responsible for:
+managing and holding information about:
+EMPTY_BYTE_ARRAY
+text
+encoding
+composedMessageLength
+composedMessageOffset
+
+Serialization of object, list of overriden method:
+writeTo(OutputStream out)throws IOException, MessagingException
+getInputStream()throws MessagingException
+
+Providing information to the following objects:
+IdentityHeaderBuilder
+MessageBuilder
+TextBodyBuilder
+MessageViewInfoExtractorTest
+MessageCreationHelper
+TextBodyBuilderTest
+MessageCreationHelper
+TextBodyTest
+TestMessageConstructionUtils
+

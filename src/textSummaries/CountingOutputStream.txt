@@ -1,0 +1,14 @@
+the CountingOutputStream Information Holder is responsible for:
+managing and holding information about:
+mCount
+
+Serialization of object, list of overriden method:
+write(int oneByte)throws IOException
+write(byte b[], int offset, int len)throws IOException
+write(byte[] b)throws IOException
+
+Providing information to the following objects:
+ProgressBodyFactory
+Message
+TextBody
+

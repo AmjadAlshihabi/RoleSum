@@ -1,0 +1,19 @@
+the CryptoResultAnnotation Information Holder is responsible for:
+managing and holding information about:
+errorType
+replacementData
+openPgpDecryptionResult
+openPgpSignatureResult
+openPgpError
+openPgpPendingIntent
+openPgpInsecureWarningPendingIntent
+overrideCryptoWarning
+encapsulatedResult
+
+Providing information to the following objects:
+MessageCryptoStructureDetector
+MessageCryptoAnnotations
+MessageViewInfo
+MessageViewInfoExtractor
+MessageViewInfoExtractorTest
+

@@ -1,0 +1,10 @@
+the SpecialColumns Information Holder is responsible for:
+managing and holding information about:
+ACCOUNT_UUID
+THREAD_COUNT
+FOLDER_SERVER_ID
+INTEGRATE
+
+Providing information to the following objects:
+EmailProvider
+

@@ -5,9 +5,10 @@ import java.util.*;
 
 public class InformationHolder extends RoleStereotype {
 	private String entityName;
-	private List<String> attributes = null;
-	private List<String> serializableMethods = null;
-	private List<String> databaseMethods = null;
+	private List<String> attributes = new ArrayList<>();
+	private List<String> serializableMethods = new ArrayList<>();
+	private List<String> databaseMethods = new ArrayList<>();
+	private List<String> declarations = new ArrayList<>();
 
 	public List<String> getAttributes() {
 		return this.attributes;
@@ -41,4 +42,11 @@ public class InformationHolder extends RoleStereotype {
 		this.databaseMethods = databaseMethods;
 	}
 
+	public List<String> getDeclarations() {
+		return this.declarations;
+	}
+
+	public void setDeclarations(List<String> declarations) {
+		this.declarations = declarations;
+	}
 }

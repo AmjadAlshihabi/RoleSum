@@ -1,0 +1,5 @@
+the PartContainer Information Holder is responsible for:
+managing and holding information about:
+parent
+part
+

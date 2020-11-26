@@ -1,0 +1,17 @@
+the InsertableHtmlContent Information Holder is responsible for:
+managing and holding information about:
+serialVersionUID
+headerInsertionPoint
+footerInsertionPoint
+quotedContent
+userContent
+insertionLocation
+
+Providing information to the following objects:
+IdentityHeaderBuilder
+MessageBuilder
+TextBodyBuilder
+HtmlQuoteCreator
+TextBodyBuilderTest
+QuotedMessagePresenter
+

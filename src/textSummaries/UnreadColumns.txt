@@ -1,0 +1,8 @@
+the UnreadColumns Information Holder is responsible for:
+managing and holding information about:
+ACCOUNT_NAME
+UNREAD
+
+Providing information to the following objects:
+MessageProvider
+

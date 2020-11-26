@@ -1,0 +1,8 @@
+the HttpGeneric Information Holder is responsible for:
+managing and holding information about:
+METHOD_NAME
+
+Providing information to the following objects:
+WebDavFolder
+WebDavStore
+

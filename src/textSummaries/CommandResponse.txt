@@ -1,0 +1,8 @@
+the CommandResponse Information Holder is responsible for:
+managing and holding information about:
+replyCode
+results
+
+Providing information to the following objects:
+SmtpTransport
+

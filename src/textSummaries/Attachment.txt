@@ -1,0 +1,19 @@
+the Attachment Information Holder is responsible for:
+managing and holding information about:
+uri
+state
+loaderId
+contentType
+allowMessageType
+name
+size
+filename
+CREATOR
+
+Providing information to the following objects:
+MessageBuilderTest
+MessageCompose
+AttachmentPresenter
+AttachmentContentLoader
+AttachmentInfoLoader
+

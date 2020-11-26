@@ -1,0 +1,24 @@
+the RecipientTokenHolder Information Holder is responsible for:
+managing and holding information about:
+layoutHeader
+layoutItem
+headerName
+headerAddressLabel
+headerPhoto
+headerRemove
+itemAddress
+itemAddressLabel
+itemCryptoStatus
+itemCryptoStatusIcon
+itemCryptoStatusSimple
+name
+email
+photo
+cryptoStatus
+cryptoStatusIcon
+cryptoStatusSimple
+
+Providing information to the following objects:
+AlternateRecipientAdapter
+RecipientAdapter
+

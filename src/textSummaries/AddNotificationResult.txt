@@ -1,0 +1,12 @@
+the AddNotificationResult Information Holder is responsible for:
+managing and holding information about:
+notificationHolder
+cancelNotificationBeforeReuse
+
+Providing information to the following objects:
+NewMailNotifications
+NotificationData
+AddNotificationResultTest
+NewMailNotificationsTest
+NotificationDataTest
+

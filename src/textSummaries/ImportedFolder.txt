@@ -1,0 +1,8 @@
+the ImportedFolder Information Holder is responsible for:
+managing and holding information about:
+name
+settings
+
+Providing information to the following objects:
+SettingsImporter
+

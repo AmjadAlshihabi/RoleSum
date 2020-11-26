@@ -1,0 +1,15 @@
+the MessageInfoHolder Information Holder is responsible for:
+managing and holding information about:
+compareDate
+sender
+senderAddress
+uid
+read
+message
+uri
+
+Providing information to the following objects:
+MessageProvider
+ReverseDateComparator
+MessageInfoHolderRetrieverListener
+

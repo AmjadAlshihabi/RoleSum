@@ -1,0 +1,10 @@
+the AuthTypeHolder Information Holder is responsible for:
+managing and holding information about:
+authType
+resources
+insecure
+
+Providing information to the following objects:
+AccountSetupIncoming
+AccountSetupOutgoing
+
