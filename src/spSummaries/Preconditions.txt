@@ -1,0 +1,9 @@
+the Preconditions Service Provider is responsible for:
+
+providing the following services for other objects:
+-	checkNotNull(T reference)
+
+Offers services and configurations to the following objects
+Preconditions:
+-	  checkNotNull(T reference)
+

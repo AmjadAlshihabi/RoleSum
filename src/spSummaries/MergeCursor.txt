@@ -1,0 +1,377 @@
+the MergeCursor Service Provider is responsible for:
+
+providing the following services for other objects:
+-	close()
+-	copyStringToBuffer(int columnIndex, CharArrayBuffer buffer)
+-	getBlob(int columnIndex)
+-	getColumnCount()
+-	getColumnIndex(String columnName)
+-	getColumnIndexOrThrow(String columnName)
+-	getColumnName(int columnIndex)
+-	getColumnNames()
+-	getDouble(int columnIndex)
+-	getFloat(int columnIndex)
+-	getInt(int columnIndex)
+-	getLong(int columnIndex)
+-	getPosition()
+-	getShort(int columnIndex)
+-	getString(int columnIndex)
+-	getType(int columnIndex)
+-	getWantsAllOnMoveCalls()
+-	setExtras(Bundle extras)
+-	isAfterLast()
+-	isBeforeFirst()
+-	isClosed()
+-	isFirst()
+-	isLast()
+-	isNull(int columnIndex)
+-	move(int offset)
+-	moveToFirst()
+-	moveToLast()
+-	moveToPosition(int position)
+-	registerContentObserver(ContentObserver observer)
+-	requery()
+-	unregisterContentObserver(ContentObserver observer)
+-	getExtras()
+-	respond(Bundle extras)
+-	getNotificationUri()
+
+Managing System Configurations:
+-	resetCursors():
+-	moveToPrevious():
+-	unregisterDataSetObserver(DataSetObserver observer):
+-	requery():
+-	deactivate():
+-	setNotificationUri(ContentResolver cr, Uri uri):
+-	registerDataSetObserver(DataSetObserver observer):
+-	getCount():
+-	moveToNext():
+-	unregisterContentObserver(ContentObserver observer):
+-	close():
+-	registerContentObserver(ContentObserver observer):
+
+Offers services and configurations to the following objects
+:
+-	  close()
+IdentityAdapter:
+-	  getCount()
+Multipart:
+-	  getCount()
+WebDavFolder:
+-	  close()
+KeyStoreProvider:
+-	  close()
+SignSafeOutputStream:
+-	  close()
+AuthTypeAdapter:
+-	  getCount()
+MessageCryptoStructureDetector:
+-	  getCount()
+MonitoredCursor:
+-	  close()
+-	  copyStringToBuffer(int columnIndex, CharArrayBuffer buffer)
+-	  deactivate()
+-	  getBlob(int columnIndex)
+-	  getColumnCount()
+-	  getColumnIndex(String columnName)
+-	  getColumnIndexOrThrow(String columnName)
+-	  getColumnName(int columnIndex)
+-	  getColumnNames()
+-	  getCount()
+-	  getDouble(int columnIndex)
+-	  getFloat(int columnIndex)
+-	  getInt(int columnIndex)
+-	  getLong(int columnIndex)
+-	  getPosition()
+-	  getShort(int columnIndex)
+-	  getString(int columnIndex)
+-	  getType(int columnIndex)
+-	  getWantsAllOnMoveCalls()
+-	  setExtras(Bundle extras)
+-	  isAfterLast()
+-	  isBeforeFirst()
+-	  isClosed()
+-	  isFirst()
+-	  isLast()
+-	  isNull(int columnIndex)
+-	  move(int offset)
+-	  moveToFirst()
+-	  moveToLast()
+-	  moveToNext()
+-	  moveToPosition(int position)
+-	  moveToPrevious()
+-	  registerContentObserver(ContentObserver observer)
+-	  registerDataSetObserver(DataSetObserver observer)
+-	  requery()
+-	  setNotificationUri(ContentResolver cr, Uri uri)
+-	  unregisterContentObserver(ContentObserver observer)
+-	  unregisterDataSetObserver(DataSetObserver observer)
+-	  getExtras()
+-	  respond(Bundle extras)
+-	  getNotificationUri()
+WebDavStore:
+-	  close()
+AttachmentController:
+-	  close()
+Base64OutputStream:
+-	  close()
+SpecialColumnsCursor:
+-	  getBlob(int columnIndex)
+-	  getColumnCount()
+-	  getColumnIndex(String columnName)
+-	  getColumnIndexOrThrow(String columnName)
+-	  getColumnName(int columnIndex)
+-	  getColumnNames()
+-	  getDouble(int columnIndex)
+-	  getFloat(int columnIndex)
+-	  getInt(int columnIndex)
+-	  getLong(int columnIndex)
+-	  getShort(int columnIndex)
+-	  getString(int columnIndex)
+-	  getType(int columnIndex)
+-	  isNull(int columnIndex)
+ImapSyncTest:
+-	  close()
+Utility:
+-	  close()
+CountingOutputStream:
+-	  getCount()
+EmailProvider:
+-	  getBlob(int columnIndex)
+-	  getColumnCount()
+-	  getColumnIndex(String columnName)
+-	  getColumnIndexOrThrow(String columnName)
+-	  getColumnName(int columnIndex)
+-	  getColumnNames()
+-	  getDouble(int columnIndex)
+-	  getFloat(int columnIndex)
+-	  getInt(int columnIndex)
+-	  getLong(int columnIndex)
+-	  getShort(int columnIndex)
+-	  getString(int columnIndex)
+-	  getType(int columnIndex)
+-	  isNull(int columnIndex)
+MockImapServer:
+-	  close()
+-	  isClosed()
+MockPop3Server:
+-	  close()
+-	  isClosed()
+EmailProviderCacheCursor:
+-	  getCount()
+-	  getInt(int columnIndex)
+-	  getPosition()
+-	  isLast()
+-	  move(int offset)
+-	  moveToFirst()
+-	  moveToLast()
+-	  moveToNext()
+-	  moveToPosition(int position)
+-	  moveToPrevious()
+Pop3Sync:
+-	  close()
+BinaryTempFileBodyInputStream:
+-	  close()
+QueryHandler:
+-	  close()
+-	  moveToFirst()
+MessageProvider:
+-	  close()
+-	  copyStringToBuffer(int columnIndex, CharArrayBuffer buffer)
+-	  deactivate()
+-	  getBlob(int columnIndex)
+-	  getColumnCount()
+-	  getColumnIndex(String columnName)
+-	  getColumnIndexOrThrow(String columnName)
+-	  getColumnName(int columnIndex)
+-	  getColumnNames()
+-	  getCount()
+-	  getDouble(int columnIndex)
+-	  getFloat(int columnIndex)
+-	  getInt(int columnIndex)
+-	  getLong(int columnIndex)
+-	  getPosition()
+-	  getShort(int columnIndex)
+-	  getString(int columnIndex)
+-	  getType(int columnIndex)
+-	  getWantsAllOnMoveCalls()
+-	  setExtras(Bundle extras)
+-	  isAfterLast()
+-	  isBeforeFirst()
+-	  isClosed()
+-	  isFirst()
+-	  isLast()
+-	  isNull(int columnIndex)
+-	  move(int offset)
+-	  moveToFirst()
+-	  moveToLast()
+-	  moveToNext()
+-	  moveToPosition(int position)
+-	  moveToPrevious()
+-	  registerContentObserver(ContentObserver observer)
+-	  registerDataSetObserver(DataSetObserver observer)
+-	  requery()
+-	  setNotificationUri(ContentResolver cr, Uri uri)
+-	  unregisterContentObserver(ContentObserver observer)
+-	  unregisterDataSetObserver(DataSetObserver observer)
+-	  getExtras()
+-	  respond(Bundle extras)
+-	  getNotificationUri()
+MimePartStreamParser:
+-	  close()
+MergeCursor:
+-	  resetCursors()
+-	  close()
+-	  copyStringToBuffer(int columnIndex, CharArrayBuffer buffer)
+-	  deactivate()
+-	  getBlob(int columnIndex)
+-	  getColumnCount()
+-	  getColumnIndex(String columnName)
+-	  getColumnIndexOrThrow(String columnName)
+-	  getColumnName(int columnIndex)
+-	  getColumnNames()
+-	  getCount()
+-	  getDouble(int columnIndex)
+-	  getFloat(int columnIndex)
+-	  getInt(int columnIndex)
+-	  getLong(int columnIndex)
+-	  getPosition()
+-	  getShort(int columnIndex)
+-	  getString(int columnIndex)
+-	  getType(int columnIndex)
+-	  getWantsAllOnMoveCalls()
+-	  setExtras(Bundle extras)
+-	  isAfterLast()
+-	  isBeforeFirst()
+-	  isClosed()
+-	  isFirst()
+-	  isLast()
+-	  isNull(int columnIndex)
+-	  move(int offset)
+-	  moveToFirst()
+-	  moveToLast()
+-	  moveToNext()
+-	  moveToPosition(int position)
+-	  moveToPrevious()
+-	  registerContentObserver(ContentObserver observer)
+-	  registerDataSetObserver(DataSetObserver observer)
+-	  requery()
+-	  setNotificationUri(ContentResolver cr, Uri uri)
+-	  unregisterContentObserver(ContentObserver observer)
+-	  unregisterDataSetObserver(DataSetObserver observer)
+-	  getExtras()
+-	  respond(Bundle extras)
+-	  getNotificationUri()
+ImapStore:
+-	  close()
+SignSafeOutputStreamTest:
+-	  close()
+BinaryAttachmentBody:
+-	  close()
+AlternateRecipientAdapter:
+-	  getCount()
+MockServerThread:
+-	  close()
+-	  isClosed()
+Transport:
+-	  close()
+ThrottlingQueryHandler:
+-	  close()
+-	  isClosed()
+Pop3FolderTest:
+-	  close()
+AttachmentInfoLoader:
+-	  close()
+-	  moveToFirst()
+MessageBuilderTest:
+-	  close()
+Message:
+-	  getCount()
+SmtpTransport:
+-	  close()
+WebDavTransport:
+-	  close()
+EmptyCursor:
+-	  getColumnNames()
+-	  getCount()
+WebDavFolderTest:
+-	  close()
+SpinnerOption:
+-	  getCount()
+ImapConnection:
+-	  close()
+-	  isClosed()
+CommandSetFlag:
+-	  close()
+Pop3Store:
+-	  close()
+ContactBadge:
+-	  close()
+-	  moveToFirst()
+CommandMoveOrCopyMessages:
+-	  close()
+Pop3Connection:
+-	  close()
+-	  isClosed()
+RecipientLoader:
+-	  close()
+-	  moveToNext()
+ConnectionSecurityAdapter:
+-	  getCount()
+Pop3StoreTest:
+-	  isClosed()
+DefaultBodyFactory:
+-	  close()
+AttachmentContentLoader:
+-	  close()
+MessageExtractor:
+-	  getCount()
+MergeCursorWithUniqueId:
+-	  getColumnCount()
+-	  getColumnIndex(String columnName)
+-	  getColumnIndexOrThrow(String columnName)
+-	  getLong(int columnIndex)
+StoreSchemaDefinitionTest:
+-	  close()
+-	  moveToFirst()
+-	  moveToNext()
+MockSmtpServer:
+-	  close()
+-	  isClosed()
+K9ListActivity:
+-	  getCount()
+LocalFolder:
+-	  close()
+-	  moveToFirst()
+-	  moveToNext()
+TextBody:
+-	  close()
+-	  getCount()
+FileBackedBody:
+-	  close()
+Pop3Folder:
+-	  close()
+FileHelper:
+-	  close()
+BinaryTempFileBody:
+-	  close()
+Contacts:
+-	  close()
+-	  getCount()
+-	  moveToFirst()
+MessageListRemoteViewFactory:
+-	  close()
+-	  getCount()
+-	  moveToNext()
+ImapStoreTest:
+-	  close()
+IdTrickeryCursor:
+-	  getColumnIndex(String columnName)
+-	  getColumnIndexOrThrow(String columnName)
+RecipientAdapter:
+-	  getCount()
+ProgressBodyFactory:
+-	  getCount()
+WebDavSync:
+-	  close()
+

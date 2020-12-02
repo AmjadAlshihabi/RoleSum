@@ -1,0 +1,35 @@
+the SimpleTextWatcher Service Provider is responsible for:
+
+providing the following services for other objects:
+-	beforeTextChanged(CharSequence s, int start, int count, int after)
+-	onTextChanged(CharSequence s, int start, int before, int count)
+-	afterTextChanged(Editable s)
+
+Offers services and configurations to the following objects
+:
+-	  beforeTextChanged(CharSequence s, int start, int count, int after)
+-	  onTextChanged(CharSequence s, int start, int before, int count)
+-	  afterTextChanged(Editable s)
+AccountSetupIncoming:
+-	  beforeTextChanged(CharSequence s, int start, int count, int after)
+-	  onTextChanged(CharSequence s, int start, int before, int count)
+-	  afterTextChanged(Editable s)
+SimpleTextWatcher:
+-	  beforeTextChanged(CharSequence s, int start, int count, int after)
+-	  onTextChanged(CharSequence s, int start, int before, int count)
+-	  afterTextChanged(Editable s)
+AccountSetupBasics:
+-	  beforeTextChanged(CharSequence s, int start, int count, int after)
+-	  onTextChanged(CharSequence s, int start, int before, int count)
+-	  afterTextChanged(Editable s)
+AccountSetupOutgoing:
+-	  beforeTextChanged(CharSequence s, int start, int count, int after)
+-	  onTextChanged(CharSequence s, int start, int before, int count)
+-	  afterTextChanged(Editable s)
+AccountSetupNames:
+-	  beforeTextChanged(CharSequence s, int start, int count, int after)
+-	  onTextChanged(CharSequence s, int start, int before, int count)
+-	  afterTextChanged(Editable s)
+MessageCompose:
+-	  onTextChanged(CharSequence s, int start, int before, int count)
+

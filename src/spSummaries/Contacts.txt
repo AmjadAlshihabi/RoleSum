@@ -1,0 +1,43 @@
+the Contacts Service Provider is responsible for:
+
+providing the following services for other objects:
+-	getInstance(Context context)
+-	createContact(final Address email)
+-	addPhoneContact(final String phoneNumber)
+-	isInContacts(final String emailAddress)
+-	isAnyInContacts(final Address[] addresses)
+-	markAsContacted(final Address[] addresses)
+-	contactPickerIntent()
+-	getPhotoUri(String address)
+-	hasContactPermission()
+-	clearCache()
+
+Managing System Configurations:
+-	getContactByAddress(final String address):
+-	getNameForAddress(String address):
+
+Offers services and configurations to the following objects
+:
+-	  getNameForAddress(String address)
+RecipientLoader:
+-	  hasContactPermission()
+RecipientPresenter:
+-	  contactPickerIntent()
+Contacts:
+-	  getInstance(Context context)
+-	  createContact(final Address email)
+-	  addPhoneContact(final String phoneNumber)
+-	  isInContacts(final String emailAddress)
+-	  isAnyInContacts(final Address[] addresses)
+-	  getNameForAddress(String address)
+-	  markAsContacted(final Address[] addresses)
+-	  contactPickerIntent()
+-	  getPhotoUri(String address)
+-	  hasContactPermission()
+-	  getContactByAddress(final String address)
+-	  clearCache()
+MessageHelperTest:
+-	  getNameForAddress(String address)
+MessageCompose:
+-	  contactPickerIntent()
+

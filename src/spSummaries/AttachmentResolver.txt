@@ -1,0 +1,15 @@
+the AttachmentResolver Service Provider is responsible for:
+
+providing the following services for other objects:
+-	getAttachmentUriForContentId(String cid)
+-	createFromPart(Part part)
+-	buildCidToAttachmentUriMap(AttachmentInfoExtractor attachmentInfoExtractor,
+            Part rootPart)
+
+Offers services and configurations to the following objects
+AttachmentResolver:
+-	  getAttachmentUriForContentId(String cid)
+-	  createFromPart(Part part)
+-	  buildCidToAttachmentUriMap(AttachmentInfoExtractor attachmentInfoExtractor,
+            Part rootPart)
+

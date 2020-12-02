@@ -1,0 +1,83 @@
+the SimpleMessagingListener Service Provider is responsible for:
+
+providing the following services for other objects:
+-	accountSizeChanged(Account account, long oldSize, long newSize)
+-	listLocalMessagesAddMessages(Account account, String folderServerId, List<LocalMessage> messages)
+-	listLocalMessagesFinished()
+-	synchronizeMailboxStarted(Account account, long folderId)
+-	synchronizeMailboxHeadersStarted(Account account, String folderServerId)
+-	synchronizeMailboxHeadersProgress(Account account, String folderServerId, int completed, int total)
+-	synchronizeMailboxHeadersFinished(Account account, String folderServerId, int totalMessagesInMailbox,
+            int numNewMessages)
+-	synchronizeMailboxProgress(Account account, long folderId, int completed, int total)
+-	synchronizeMailboxNewMessage(Account account, String folderServerId, Message message)
+-	synchronizeMailboxRemovedMessage(Account account, String folderServerId, String messageServerId)
+-	synchronizeMailboxFinished(Account account, long folderId)
+-	synchronizeMailboxFailed(Account account, long folderId, String message)
+-	loadMessageRemoteFinished(Account account, long folderId, String uid)
+-	loadMessageRemoteFailed(Account account, long folderId, String uid, Throwable t)
+-	checkMailStarted(Context context, Account account)
+-	checkMailFinished(Context context, Account account)
+-	folderStatusChanged(Account account, long folderId)
+-	messageUidChanged(Account account, long folderId, String oldUid, String newUid)
+-	loadAttachmentFinished(Account account, Message message, Part part)
+-	loadAttachmentFailed(Account account, Message message, Part part, String reason)
+-	remoteSearchStarted(long folderId)
+-	remoteSearchServerQueryComplete(long folderId, int numResults, int maxResults)
+-	remoteSearchFinished(long folderId, int numResults, int maxResults, List<String> extraResults)
+-	remoteSearchFailed(String folderServerId, String err)
+-	enableProgressIndicator(boolean enable)
+-	updateProgress(int progress)
+
+Offers services and configurations to the following objects
+:
+-	  loadAttachmentFinished(Account account, Message message, Part part)
+-	  loadAttachmentFailed(Account account, Message message, Part part, String reason)
+MemorizingMessagingListener:
+-	  synchronizeMailboxStarted(Account account, long folderId)
+-	  synchronizeMailboxFinished(Account account, long folderId)
+MessageProvider:
+-	  listLocalMessagesAddMessages(Account account, String folderServerId, List<LocalMessage> messages)
+-	  listLocalMessagesFinished()
+-	  folderStatusChanged(Account account, long folderId)
+MessageInfoHolderRetrieverListener:
+-	  listLocalMessagesAddMessages(Account account, String folderServerId, List<LocalMessage> messages)
+-	  listLocalMessagesFinished()
+AttachmentDownloadDialogFragment:
+-	  updateProgress(int progress)
+AttachmentController:
+-	  loadAttachmentFinished(Account account, Message message, Part part)
+-	  loadAttachmentFailed(Account account, Message message, Part part, String reason)
+SimpleMessagingListener:
+-	  accountSizeChanged(Account account, long oldSize, long newSize)
+-	  listLocalMessagesAddMessages(Account account, String folderServerId, List<LocalMessage> messages)
+-	  listLocalMessagesFinished()
+-	  synchronizeMailboxStarted(Account account, long folderId)
+-	  synchronizeMailboxHeadersStarted(Account account, String folderServerId)
+-	  synchronizeMailboxHeadersProgress(Account account, String folderServerId, int completed, int total)
+-	  synchronizeMailboxHeadersFinished(Account account, String folderServerId, int totalMessagesInMailbox,
+            int numNewMessages)
+-	  synchronizeMailboxProgress(Account account, long folderId, int completed, int total)
+-	  synchronizeMailboxNewMessage(Account account, String folderServerId, Message message)
+-	  synchronizeMailboxRemovedMessage(Account account, String folderServerId, String messageServerId)
+-	  synchronizeMailboxFinished(Account account, long folderId)
+-	  synchronizeMailboxFailed(Account account, long folderId, String message)
+-	  loadMessageRemoteFinished(Account account, long folderId, String uid)
+-	  loadMessageRemoteFailed(Account account, long folderId, String uid, Throwable t)
+-	  checkMailStarted(Context context, Account account)
+-	  checkMailFinished(Context context, Account account)
+-	  folderStatusChanged(Account account, long folderId)
+-	  messageUidChanged(Account account, long folderId, String oldUid, String newUid)
+-	  loadAttachmentFinished(Account account, Message message, Part part)
+-	  loadAttachmentFailed(Account account, Message message, Part part, String reason)
+-	  remoteSearchStarted(long folderId)
+-	  remoteSearchServerQueryComplete(long folderId, int numResults, int maxResults)
+-	  remoteSearchFinished(long folderId, int numResults, int maxResults, List<String> extraResults)
+-	  remoteSearchFailed(String folderServerId, String err)
+-	  enableProgressIndicator(boolean enable)
+-	  updateProgress(int progress)
+ProgressBodyFactory:
+-	  updateProgress(int progress)
+MessageCompose:
+-	  messageUidChanged(Account account, long folderId, String oldUid, String newUid)
+

@@ -1,0 +1,14 @@
+the AutocryptStatusInteractor Service Provider is responsible for:
+
+providing the following services for other objects:
+-	retrieveCryptoProviderRecipientStatus(
+            OpenPgpApi openPgpApi, String[] recipientAddresses)
+-	getRecipientAutocryptStatusFromIntent(Intent result)
+
+Managing System Configurations:
+-	getInstance():
+
+Offers services and configurations to the following objects
+BoundaryGenerator:
+-	  getInstance()
+

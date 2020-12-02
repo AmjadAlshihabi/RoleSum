@@ -2,6 +2,7 @@ package extractor;
 
 import org.w3c.dom.*;
 
+
 import javax.xml.xpath.*;
 import javax.xml.parsers.*;
 
@@ -11,9 +12,17 @@ import java.io.IOException;
 import java.util.*;
 import org.xml.sax.SAXException;
 import roles.InformationHolder;
+import roles.ServiceProvider;
+
 import java.lang.*;
 
 public class Extractor {
+	private final static String INFORMATION_HOLDER = "Information Holder";
+	private final static String SERVICE_PROVIDER = "Service Provider";
+	private final static String COORDINATOR = "Coordinator";
+	private final static String STRUCTURER = "Structurer";
+	private final static String CONTROLLER = "Controller";
+	private final static String INTERFACER = "Interfacer";
 	public static void main(String[] args) {
 		DocumentBuilderFactory domFactory = DocumentBuilderFactory.newInstance();
 		domFactory.setNamespaceAware(true);
@@ -29,9 +38,9 @@ public class Extractor {
 		}	
 		XPath xpath = XPathFactory.newInstance().newXPath();
 		// ectracting names of information holders classes from the xml file
-		List<String> IHclasses = IHClassNames(doc, xpath);
+//		List<String> IHclasses = extractClassNames(doc, xpath, INFORMATION_HOLDER);
 //		 ectracting names of Service Provider classes from the xml file
-//		List<String> SPclasses = SPClassNames(doc, xpath);
+		List<String> SPclasses = extractClassNames(doc, xpath, SERVICE_PROVIDER);
 //		 ectracting names of Structurer classes from the xml file
 //		List<String> STclasses = STClassNames(doc, xpath);
 //		 ectracting names of Coordinators classes from the xml file
@@ -42,18 +51,60 @@ public class Extractor {
 //		List<String> ITclasses = ITClassNames(doc, xpath);
 		
 //		list to hold the InformationHolder objects
-		List<InformationHolder> IH = new ArrayList<InformationHolder>();
-		for (int i = 0; i<IHclasses.size(); i++) {
-			String className = IHclasses.get(i);
-			InformationHolder infoHolder = new InformationHolder();
-			infoHolder.setEntityName(className);
-			infoHolder.setAttributes(extractAttributes(doc, xpath, className));
-			infoHolder.setSerializableMethods(extractSerializableMethods(doc, xpath, className));
-			infoHolder.setDatabaseMethods(extractDatabaseMethods(doc, xpath, className));
-			infoHolder.setDeclarations(extractDeclarations(doc, xpath, className));
-			summarizeIH(infoHolder);
+//		List<InformationHolder> IH = new ArrayList<InformationHolder>();
+//		for (int i = 0; i<IHclasses.size(); i++) {
+//			String className = IHclasses.get(i);
+//			InformationHolder infoHolder = new InformationHolder();
+//			infoHolder.setEntityName(className);
+//			infoHolder.setAttributes(extractAttributes(doc, xpath, className));
+//			infoHolder.setSerializableMethods(extractSerializableMethods(doc, xpath, className));
+//			infoHolder.setDatabaseMethods(extractDatabaseMethods(doc, xpath, className));
+//			infoHolder.setDeclarations(extractDeclarations(doc, xpath, className));
+//			summarizeIH(infoHolder);
+//			IH.add(infoHolder);
+//	}
+//		List to hold the serviceProviders
+		List<ServiceProvider> SP = new ArrayList<ServiceProvider>();
+		for (int i = 0; i<SPclasses.size(); i++) {
+			String className = SPclasses.get(i);
+			ServiceProvider servProv = new ServiceProvider();
+			servProv.setEntityName(className);
+			List <String> services = extractServices(doc, xpath, className);
+			HashMap<String, Integer> configurations = extractConfigurations(doc, xpath, className);
+			for (int j = 0; j<services.size(); j++) {
+				if (configurations.get(services.get(j))!=null) {
+					services.remove(j);
+				}
+			}
+//			System.out.println("method calls");
+//			extractMethodCalls(doc, xpath, className);
+			servProv.setEntityName(className);
+			servProv.setServices(services);
+			servProv.setConfigurations(configurations);
+			servProv.setClientObjects(extractMethodCalls(doc, xpath, className));
+			summarizeSP(servProv);
+//			SP.add(servProv);
+//			HashMap <String, Integer> hm = extractConfigurations(doc, xpath, className);
+//			System.out.println("This is class: "+className);
+//			for(int j=0; j<services.size(); j++ ) {
+//				System.out.println(services.get(j));
+//			}
+//			hm.entrySet().forEach(entry->{
+//			    System.out.println(entry.getKey());  
+//			 });
+//			for (String name: hm.keySet()){
+//	            String key = name.toString();
+//	            String value = hm.get(name).toString(); 
+////	            System.out.println("1");
+//	            System.out.println("method: "+value);  
+////	            System.out.println("2");
+//	}
+//			ServProv.setConfigurations(extractConfigurations(doc, xpath, className));
+//			ServProv.setParents(extractParentClasses(doc, xpath, className));
+//			summarizeSP(ServProv);
 //			IH.add(infoHolder);
 		}
+	}
 		
 //		testing the methods
 //		for (int i =0; i<IH.size();i++) {
@@ -65,9 +116,194 @@ public class Extractor {
 //				}
 //			}
 //		}
+	
+	private static HashMap<String, List<String>> extractMethodCalls(Document doc, XPath xpath, String className){
+		List <String> methods = getMethodNames(doc, xpath, className);
+		HashMap<String, List<String>> clientObjects = new HashMap<String, List<String>>();
+//		for(int i=0; i<methods.size(); i++) {
+//			System.out.println(methods.get(i));
+//		}
+		try {
+			String path = "//class[name='"+className+"']/ancestor::unit/@filename | "
+					+ "//interface[name='"+className+"']/ancestor::unit/@filename |"
+					+ "//enum[name='"+className+"']/ancestor::unit/@filename";
+			NodeList filename = (NodeList) xpath.compile(path).evaluate(doc, XPathConstants.NODESET);
+			String words[] = filename.item(0).getTextContent().split("/");
+			path = "";
+			boolean pathExtraction = false;
+			for(int i = 0; i<words.length; i++) {
+				if(words[i].equals("com")) {
+					path += words[i]+".";
+					pathExtraction = true;
+					continue;
+				}
+				if(pathExtraction) {
+					path+=words[i]+".";
+				}
+			}
+			path = path.substring(0, path.length()-1);
+
+			String expr = "//class | interface";
+			NodeList classes = (NodeList) xpath.compile(expr).evaluate(doc, XPathConstants.NODESET);
+			for (int i = 0; i<classes.getLength(); i++) {
+				String clss= classes.item(i).getTextContent();
+				List <String> consumedMethods = new ArrayList<String>();
+				NodeList childNodes = classes.item(i).getChildNodes();
+				String currClass="";
+				for (int j = 0; j<childNodes.getLength(); j++) {
+					if(childNodes.item(j).getNodeName().equalsIgnoreCase("name")) {
+						currClass = childNodes.item(j).getTextContent();
+					}
+				}
+				for (int j = 0; j<methods.size(); j++) {
+					if (clss.contains(methods.get(j))) {
+						consumedMethods.add(methods.get(j));
+					}
+				}
+				if(consumedMethods.size()>0) {					
+					clientObjects.put(currClass, consumedMethods);
+				}
+			}
+		}catch(XPathExpressionException e) {
+			e.printStackTrace();
+		}
+		return clientObjects;
+	}
+	
+	private static HashMap <String, Integer> extractConfigurations(Document doc, XPath xpath, String className) {
+		// TODO Auto-generated method stub
+		NodeList finals = null;
+//		save the result to hashMap to avoid redundancy
+		HashMap <String, Integer> configurations = new HashMap <String, Integer>();
+//		extract final attributes.
+		try {
+//			extracting the final attributes of the class
+			String exprFinals = "//class[name='"+ className +"']/block/decl_stmt/decl/type[specifier='final']/following-sibling::name | "
+					+ "//interface[name='"+ className +"']/block/decl_stmt/decl/type[specifier='final']/following-sibling::name";
+			finals = (NodeList) xpath.compile(exprFinals).evaluate(doc, XPathConstants.NODESET);
+			String exprMethods = "//class[name='"+ className+"']/block/function";
+			NodeList methods = (NodeList) xpath.compile(exprMethods).evaluate(doc, XPathConstants.NODESET);
+			for(int j = 0; j<finals.getLength();j++) {
+				String finalAtt = finals.item(j).getChildNodes().item(0).getTextContent();
+					for (int i =0; i<methods.getLength(); i++) {
+						String method = methods.item(i).getTextContent();
+						if(method.contains(finalAtt)) {
+							NodeList childNodes = methods.item(i).getChildNodes();
+							String name = "";
+							for (int k = 0; k<childNodes.getLength(); k++) {
+								if (childNodes.item(k).getNodeName().equalsIgnoreCase("name")) {
+									name+=childNodes.item(k).getTextContent();
+									if (k+1<childNodes.getLength()) {
+										name+=childNodes.item(k+1).getTextContent();
+										break;
+									}
+								}
+							}
+							configurations.put(name, i);							
+						}
+					}
+				}
+		}catch(XPathExpressionException e) {
+			e.printStackTrace();
+		}
+		
+		return configurations;
 	}
 
-	private static void summarizeIH(InformationHolder IHclass) {
+	private static List <String> extractServices(Document doc, XPath xpath, String className){
+		return getMethodNames(doc, xpath, className);
+	}
+	
+	private static List <String> getMethodNames (Document doc, XPath xpath, String className) {
+		List <String> methods = new ArrayList<String>();
+		NodeList MethodsNode = null;
+		try {
+			String expr = "//class[name='"+ className+"']/block/function |"
+					+ "//interface[name='"+ className+"']/block/function";
+			MethodsNode = (NodeList) xpath.compile(expr).evaluate(doc, XPathConstants.NODESET);
+			for (int i =0; i<MethodsNode.getLength(); i++) {
+//				String method = MethodsNode.item(i).getTextContent();
+					NodeList childNodes = MethodsNode.item(i).getChildNodes();
+					String name = "";
+					for (int k = 0; k<childNodes.getLength(); k++) {
+						if (childNodes.item(k).getNodeName().equalsIgnoreCase("name")) {
+							name+=childNodes.item(k).getTextContent();
+							if (k+1<childNodes.getLength()) {
+								name+=childNodes.item(k+1).getTextContent();
+								break;
+							}
+						}
+					}
+					methods.add(name);
+			}
+		}catch (XPathExpressionException e) {
+			e.printStackTrace();
+		}
+		return methods;
+	}
+
+	private static void summarizeSP (ServiceProvider SPclass) {
+		String template = "the %(className) Service Provider is responsible for:\n\n";
+		template = template.replace("%(className)", SPclass.getEntityName());
+		if (SPclass.getServices().size()>0) {
+			String serviceMethods = "";
+			List <String> services = SPclass.getServices();
+			for (int i = 0; i<services.size(); i++) {
+				serviceMethods += "-	"+services.get(i) + "\n";
+			}
+			template += "providing the following services for other objects:\n"
+					+ "%(serviceMethods)\n";
+			template = template.replace("%(serviceMethods)", serviceMethods);
+		}
+		if (SPclass.getConfigurations().size()>0) {
+			String configurationMethod = "";
+			HashMap <String, Integer> configurations = SPclass.getConfigurations();
+			for(String method : configurations.keySet()) {
+				configurationMethod += "-	"+method+ ":\n";  				
+			}
+			template += "Managing System Configurations:\n"
+					+ "%(configurations)\n";
+			template = template.replace("%(configurations)", configurationMethod);
+		}
+		if(SPclass.getClientObjects().size()>0) {
+			HashMap<String, List<String>> clientObjects = SPclass.getClientObjects();
+			String consumers = "";
+			for ( String key : clientObjects.keySet() ) {
+				consumers += key + ":\n";
+				System.out.println(key);
+			    List<String> methods = clientObjects.get(key);
+			    for(int i =0; i<methods.size(); i++) {
+			    	consumers += "-	  "+methods.get(i) + "\n";
+			    }
+			}
+			template += "Offers services and configurations to the following objects\n"
+					+ "%(consumers)\n";
+			template = template.replace("%(consumers)", consumers);
+		}
+		try {
+		      File file = new File("./src/spSummaries/"+SPclass.getEntityName() + ".txt");
+		      if (file.createNewFile()) {
+		        System.out.println("File created: " + file.getName());
+		      } else {
+		        System.out.println("File already exists.");
+		      }
+		    } catch (IOException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
+		
+		try {
+		      FileWriter templateWriter = new FileWriter("./src/spSummaries/"+SPclass.getEntityName() + ".txt");
+		      templateWriter.write(template);
+		      templateWriter.close();
+		      System.out.println("Successfully wrote to the file.");
+		    } catch (IOException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
+	}
+	
+	private static void summarizeIH (InformationHolder IHclass) {
 		String template = "the %(className) Information Holder is responsible for:\n";
 		template = template.replace("%(className)", IHclass.getEntityName());
 		if (IHclass.getAttributes().size()>0) {
@@ -134,17 +370,17 @@ public class Extractor {
 		    }
 	}
 //	extracting names of classes from the xml file
-	private static List<String> IHClassNames(Document doc, XPath xpath) {
+	private static List<String> extractClassNames(Document doc, XPath xpath, String role) {
 		// TODO Auto-generated method stub
-		NodeList IH = null;
+		NodeList roles = null;
 		List <String> classNames = new ArrayList<String>();
 		try {
-			String expr = "//enum[@role_stereotype='Information Holder']/name | "
-					+ "//class[@role_stereotype='Information Holder']/name | "
-					+ "//interface[@role_stereotype='Information Holder']/name";
-			IH = (NodeList) xpath.compile(expr).evaluate(doc, XPathConstants.NODESET);
-			for (int i = 0; i<IH.getLength(); i++) {
-				classNames.add(IH.item(i).getTextContent());
+			String expr = "//enum[@role_stereotype='"+ role +"']/name | "
+					+ "//class[@role_stereotype='"+ role +"']/name | "
+					+ "//interface[@role_stereotype='"+ role +"']/name";
+			roles = (NodeList) xpath.compile(expr).evaluate(doc, XPathConstants.NODESET);
+			for (int i = 0; i<roles.getLength(); i++) {
+				classNames.add(roles.item(i).getTextContent());
 			}
 		}catch(XPathExpressionException e) {
 			e.printStackTrace();
@@ -202,55 +438,6 @@ public class Extractor {
 			}
 			
 		}
-//		for(int i = 0; i<serializables.size(); i++) {
-//			System.out.println(serializables.get(i));
-//		}
-//		System.out.println(methods.item(1))
-//		if(className.equals("FileBackedBody")) System.out.print(method);
-//		serializables.add(method);
-//			for(int i = 0; i<methods.getLength(); i++) {
-////				names = (NodeList) xpath.compile("//name").evaluate(methods.item(i), XPathConstants.NODESET);
-////				System.out.println(methods.item(i).getTextContent());
-//				serializables.add(methods.item(i).getTextContent());
-//			}
-//		extract the extended or implemented classes for the className passed in the argument
-//		try {
-//			String expr = "//class[name='"+ className+"']/super_list/implements/super/name | "
-//					+ "//enum[name='"+ className+"']/super_list/implements/super/name | "
-//					+ "//interface[name='"+ className+"']/super_list/implements/super/name |"
-//							+ "//interface[name='"+ className+"']/super_list/extends/name";
-//			serializableNodes = (NodeList) xpath.compile(expr).evaluate(doc, XPathConstants.NODESET);
-//		}catch(XPathExpressionException e) {
-//			e.printStackTrace();
-//		}
-////		check if the class or interface implements/extends Serializable or Parcelable interfaces
-//		for(int i = 0; i<serializableNodes.getLength(); i++) {
-//			String serializable = serializableNodes.item(i).getTextContent();
-//			if(serializable.equals("Serializable") | serializable.equals("Parcelable")) {
-//				try {
-//					String expr = "//class[name='"+ className+"']/block/function[annotation/name='Override']/*[not(self::block)] | "
-//							+ "//enum[name='"+ className+"']/block/function[annotation/name='Override']/*[not(self::block)] | "
-//							+ "//interface[name='"+ className+"']/block/function[annotation/name='Override']/*[not(self::block)]";
-//					serializableMethods = (NodeList) xpath.compile(expr).evaluate(doc, XPathConstants.NODESET);
-////					System.out.println("the length is" + serializableMethods.getLength());
-//				}catch(XPathExpressionException e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		}
-////		saving the functions' signature for the className as strings;
-//		if(serializableMethods!=null) {
-//			String method = "";
-//			for(int i = 0; i<serializableMethods.getLength(); i++) {
-////				List<String> method = new ArrayList<String>();
-//				method += serializableMethods.item(i).getTextContent() + " ";
-//				if(serializableMethods.item(i).getNodeName().equals("parameter_list")) {
-//					serializables.add(method);					
-//					method = "";
-//				}
-////				serializables.add(serializableMethods.item(i).getTextContent());
-//			}
-//		}
 		return serializables;
 	}
 //	extract methods that declars sql object or takes in  
@@ -272,25 +459,11 @@ public class Extractor {
 			if (node.toLowerCase().contains("sql") | node.toLowerCase().contains("database") | node.toLowerCase().contains("mongo") | node.toLowerCase().contains("db") | node.toLowerCase().contains("DB")) {
 				String method = "";
 				NodeList methodNode = functions.item(i).getChildNodes();
-//				String item = null;
-//				try {					
-//					item = methodNode.item(i).getTextContent();
-//				}catch(NullPointerException e) {
-//					continue;
-//				}
-				
-//				if (!item.equals("String") | !item.equals("char") | !item.equals("float") | !item.equals("double") | 
-//						!item.equals("long") | !item.equals("int") | !item.equals("short") | 
-//						!item.equals("byte") | !item.equals("boolean") | !item.equals("final") | !item.equals("public") | 
-//						!item.equals("") | !item.equals("private") | !item.equals("void") | !item.equals("statix") | !item.equals("final")) {					
-//				}
 //				we exclude the last child node (<block>) which is the the body of the method 
 //				so we only save the method declaration and signature.	
 				for(int j = 0; j < methodNode.getLength()-1; j++) {
 					method += methodNode.item(j).getTextContent();
 				}
-//				String returnMethod = getMethodName(method);
-//				System.out.println(returnMethod);
 				methods.add(method);
 			}
 		}
@@ -301,16 +474,12 @@ public class Extractor {
 			NodeList classes = null;
 			List <String> declarations = new ArrayList<String>();
 			try {
-//				String expr= "//class[name='"+ className+"']/block/block_content/function/decl_stmt/decl/type[name]";
 				String expr= "//class | //interface";
-//				String expr = "//class/block/*[name='"+ className+"']/ancestor::class/name";
 				classes = (NodeList) xpath.compile(expr).evaluate(doc, XPathConstants.NODESET);
 			}catch(XPathExpressionException e) {
 				e.printStackTrace();
 			}
 			for (int i =0; i<classes.getLength(); i++) {
-//				declarations.add(classes.item(i).getTextContent());
-//				System.out.println(classes.item(i).getTextContent());
 					if (classes.item(i).getTextContent().contains(" "+className+" ")) {		
 						NodeList childNodes = classes.item(i).getChildNodes();
 						for(int j = 0; j<childNodes.getLength(); j++) {
@@ -321,14 +490,7 @@ public class Extractor {
 							}
 					}
 				}
-//					System.out.println(cnt);
 			}
-//			if (declarations.size()>0) {				
-//				System.out.println("the " +className+" is declared in: ");
-//				for (int i =0; i<declarations.size(); i++) {
-//					System.out.println(declarations.get(i));
-//				}
-//			}
 		return declarations;
 	}
 //	public static String getMethodName(String str) {

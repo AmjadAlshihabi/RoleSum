@@ -1,0 +1,11 @@
+the ReplyToParser Service Provider is responsible for:
+
+providing the following services for other objects:
+-	getRecipientsToReplyTo(Message message, Account account)
+-	getRecipientsToReplyAllTo(Message message, Account account)
+
+Offers services and configurations to the following objects
+ReplyToParser:
+-	  getRecipientsToReplyTo(Message message, Account account)
+-	  getRecipientsToReplyAllTo(Message message, Account account)
+

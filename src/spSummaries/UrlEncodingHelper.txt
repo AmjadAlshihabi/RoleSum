@@ -1,0 +1,18 @@
+the UrlEncodingHelper Service Provider is responsible for:
+
+providing the following services for other objects:
+-	encodeUtf8(String s)
+-	decodeUtf8(String s)
+-	encodeUtf8(String s)
+
+Offers services and configurations to the following objects
+UrlEncodingHelper:
+-	  encodeUtf8(String s)
+-	  decodeUtf8(String s)
+-	  encodeUtf8(String s)
+SmtpTransportUriDecoder:
+-	  decodeUtf8(String s)
+SmtpTransportUriCreator:
+-	  encodeUtf8(String s)
+-	  encodeUtf8(String s)
+

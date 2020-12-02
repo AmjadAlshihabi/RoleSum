@@ -1,0 +1,13 @@
+the ParcelableUtil Service Provider is responsible for:
+
+providing the following services for other objects:
+-	marshall(Parcelable parceable)
+-	unmarshall(byte[] bytes, Parcelable.Creator<T> creator)
+-	unmarshall(byte[] bytes)
+
+Offers services and configurations to the following objects
+ParcelableUtil:
+-	  marshall(Parcelable parceable)
+-	  unmarshall(byte[] bytes, Parcelable.Creator<T> creator)
+-	  unmarshall(byte[] bytes)
+
