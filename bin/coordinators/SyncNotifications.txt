@@ -1,0 +1,22 @@
+This SyncNotifications is responsible for delegating work between objects: 
+
+ * The showFetchingMailNotification method receives requests from:
+-	NotificationController
+-	SyncNotifications
+-	SyncNotificationsTest
+
+ * and delegate the request to: 
+-	NotificationActionCreator
+-	LocalFolder
+
+
+
+ * The showSendingNotification method receives requests from:
+-	NotificationController
+-	SyncNotifications
+-	SyncNotificationsTest
+
+ * and delegate the request to: 
+-	NotificationActionCreator
+
+

@@ -1,0 +1,49 @@
+This MessageProvider is responsible for delegating work between objects: 
+
+ * The registerQueryHandler method receives requests from:
+-	MessageProvider
+
+ * and delegate the request to: 
+-	QueryHandler
+
+
+
+ * The query method receives requests from:
+-	Contacts
+-	LocalFolder
+-	EmailProvider
+-	SqlQueryBuilder
+-	HttpUriParserTest
+-	MessageProvider
+-	MessagesQueryHandler
+-	AccountsQueryHandler
+-	UnreadQueryHandler
+-	ThrottlingQueryHandler
+-	MessageListRemoteViewFactory
+-	StoreSchemaDefinitionTest
+-	RecipientLoader
+-	AttachmentInfoLoader
+-	RecipientSelectView
+-	RecipientLoaderTest
+
+ * and delegate the request to: 
+-	QueryHandler
+
+
+
+ * The delete method receives requests from:
+-	Preferences
+-	FileHelper
+-	LocalMessage
+-	InsertableHtmlContent
+-	NotificationData
+-	EmailProvider
+-	MessageProvider
+-	BinaryTempFileBody
+-	BinaryTempFileBodyInputStream
+-	LocalKeyStore
+
+ * and delegate the request to: 
+-	MessageReference
+
+

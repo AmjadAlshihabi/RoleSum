@@ -1,0 +1,26 @@
+This AccountExtractor is responsible for delegating work between objects: 
+
+ * The getField method receives requests from:
+-	MessageProvider
+-	IdExtractor
+-	CountExtractor<T>
+-	SubjectExtractor
+-	SendDateExtractor
+-	PreviewExtractor
+-	UriExtractor
+-	DeleteUriExtractor
+-	SenderExtractor
+-	SenderAddressExtractor
+-	AccountExtractor
+-	AccountColorExtractor
+-	AccountNumberExtractor
+-	HasAttachmentsExtractor
+-	HasStarExtractor
+-	UnreadExtractor
+-	IncrementExtractor
+-	MessagesQueryHandler
+
+ * and delegate the request to: 
+-	MessageInfoHolder
+
+

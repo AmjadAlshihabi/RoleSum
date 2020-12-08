@@ -1,0 +1,151 @@
+This Accounts is responsible for delegating work between objects: 
+
+ * The onOpenAccount method receives requests from:
+-	Accounts
+
+ * and delegate the request to: 
+-	BaseAccount
+
+
+
+ * The onClear method receives requests from:
+-	Accounts
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The onEmptyTrash method receives requests from:
+-	Accounts
+-	FolderList
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The showAccountsImportedDialog method receives requests from:
+-	ImportAsyncTask
+-	Accounts
+
+ * and delegate the request to: 
+-	ImportResults
+
+
+
+ * The onMove method receives requests from:
+-	MessageViewFragment
+-	MonitoredCursor
+-	ActionModeCallback
+-	MessageListFragment
+-	Accounts
+-	MessageList
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The onDeleteAccount method receives requests from:
+-	Accounts
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The createUnreadSearch method receives requests from:
+-	NotificationActionCreator
+-	AccountsAdapter
+-	Accounts
+-	FolderListAdapter
+
+ * and delegate the request to: 
+-	BaseAccount
+
+
+
+ * The accountLocation method receives requests from:
+-	Accounts
+
+ * and delegate the request to: 
+-	BaseAccount
+
+
+
+ * The onCheckMail method receives requests from:
+-	Accounts
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The onExport method receives requests from:
+-	Accounts
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The setNonConfigurationInstance method receives requests from:
+-	AccountsImportedDialog
+-	ExportAsyncTask
+-	ImportAsyncTask
+-	ImportSelectionDialog
+-	ListImportContentsAsyncTask
+-	MoveAccountAsyncTask
+-	SimpleDialog
+-	PasswordPromptDialog
+-	SetPasswordsAsyncTask
+-	Accounts
+
+ * and delegate the request to: 
+-	NonConfigurationInstance
+
+
+
+ * The onClearCommands method receives requests from:
+-	Accounts
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The onActivateAccount method receives requests from:
+-	Accounts
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The onRecreate method receives requests from:
+-	Accounts
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The onEditAccount method receives requests from:
+-	Accounts
+-	FolderList
+-	MessageList
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The showImportSelectionDialog method receives requests from:
+-	ListImportContentsAsyncTask
+-	Accounts
+
+ * and delegate the request to: 
+-	ImportContents
+
+

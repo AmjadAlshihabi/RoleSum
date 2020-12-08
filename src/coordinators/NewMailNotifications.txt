@@ -1,0 +1,141 @@
+This NewMailNotifications is responsible for delegating work between objects: 
+
+ * The updateSummaryNotification method receives requests from:
+-	NewMailNotifications
+
+ * and delegate the request to: 
+-	Account
+-	NotificationData
+
+
+
+ * The removeNotificationData method receives requests from:
+-	NewMailNotifications
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The newInstance method receives requests from:
+-	WebDavStore
+-	FolderNameCodec
+-	ImapFolder
+-	ImapStore
+-	MimeMultipart
+-	K9WebViewClient
+-	MessageWebView
+-	CryptoInfoDialog
+-	MessageViewFragment
+-	RealDeviceIdleManager
+-	SettingsImporter
+-	DeviceIdleManager
+-	DeviceNotifications
+-	LockScreenNotification
+-	NewMailNotifications
+-	NotificationController
+-	PgpMessageBuilder
+-	SimpleMessageBuilder
+-	HtmlProcessor
+-	AttachmentCounter
+-	MessageFulltextCreator
+-	MessagePreviewCreator
+-	LocalStore
+-	MessageViewInfoExtractor
+-	AttachmentDownloadDialogFragment
+-	ConfirmationDialogFragment
+-	ProgressDialogFragment
+-	MessageListFragment
+-	MessagingController
+-	K9Activity
+-	K9ActivityCommon
+-	K9ListActivity
+-	MessageCompose
+-	MessageList
+-	AccountSetupCheckSettings
+-	AttachmentContentLoader
+-	PgpEnabledErrorDialog
+-	PgpEncryptDescriptionDialog
+-	PgpInlineDialog
+-	PgpSignOnlyDialog
+-	RecipientMvpView
+
+ * and delegate the request to: 
+-	NotificationController
+-	NotificationActionCreator
+
+
+
+ * The createSummaryNotification method receives requests from:
+-	NewMailNotifications
+
+ * and delegate the request to: 
+-	Account
+-	NotificationData
+
+
+
+ * The removeNewMailNotification method receives requests from:
+-	NewMailNotifications
+-	NotificationController
+-	MessagingController
+
+ * and delegate the request to: 
+-	Account
+-	MessageReference
+
+
+
+ * The clearNewMailNotifications method receives requests from:
+-	NewMailNotifications
+-	NotificationController
+-	MessagingController
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The getOrCreateNotificationData method receives requests from:
+-	NewMailNotifications
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The getNotificationData method receives requests from:
+-	NewMailNotifications
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The createNotificationData method receives requests from:
+-	NewMailNotifications
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The addNewMailNotification method receives requests from:
+-	NewMailNotifications
+-	NotificationController
+-	MessagingController
+
+ * and delegate the request to: 
+-	Account
+-	LocalMessage
+
+
+
+ * The createStackedNotification method receives requests from:
+-	NewMailNotifications
+
+ * and delegate the request to: 
+-	Account
+-	NotificationHolder
+
+

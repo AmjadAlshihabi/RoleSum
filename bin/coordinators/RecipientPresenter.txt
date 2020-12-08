@@ -1,0 +1,456 @@
+This RecipientPresenter is responsible for delegating work between objects: 
+
+ * The initFromReplyToMessage method receives requests from:
+-	MessageCompose
+-	RecipientPresenter
+-	QuotedMessagePresenter
+-	RecipientPresenterTest
+
+ * and delegate the request to: 
+-	ReplyToAddresses
+-	ComposePgpEnableByDefaultDecider
+-	ComposePgpInlineDecider
+-	ReplyToParser
+-	Message
+
+
+
+ * The addRecipientFromContactUri method receives requests from:
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	Recipient
+-	RecipientMvpView
+-	RecipientType
+
+
+
+ * The onClickBccLabel method receives requests from:
+-	RecipientMvpView
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientMvpView
+
+
+
+ * The checkRecipientsOkForSending method receives requests from:
+-	MessageCompose
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientMvpView
+
+
+
+ * The onToFocused method receives requests from:
+-	RecipientMvpView
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientType
+
+
+
+ * The initFromMailto method receives requests from:
+-	MessageCompose
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	MailTo
+
+
+
+ * The addAlwaysBcc method receives requests from:
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientMvpView
+
+
+
+ * The onActivityResult method receives requests from:
+-	MessageBuilder
+-	MessageCompose
+-	AttachmentPresenter
+-	RecipientPresenter
+-	AccountSetupBasics
+-	AccountSetupIncoming
+-	AccountSetupOutgoing
+
+ * and delegate the request to: 
+-	RecipientType
+-	OpenPgpApiManager
+
+
+
+ * The hideEmptyExtendedRecipientFields method receives requests from:
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientMvpView
+-	RecipientType
+
+
+
+ * The onMenuSetPgpInline method receives requests from:
+-	MessageCompose
+-	RecipientPresenter
+-	RecipientPresenterTest
+
+ * and delegate the request to: 
+-	RecipientMvpView
+
+
+
+ * The updateRecipientExpanderVisibility method receives requests from:
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientMvpView
+
+
+
+ * The addToAddresses method receives requests from:
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	Address
+
+
+
+ * The onMenuSetSignOnly method receives requests from:
+-	MessageCompose
+-	RecipientPresenter
+-	RecipientPresenterTest
+
+ * and delegate the request to: 
+-	RecipientMvpView
+
+
+
+ * The initFromDraftMessage method receives requests from:
+-	MessageCompose
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	Message
+
+
+
+ * The initEncryptionStateFromDraftStateHeader method receives requests from:
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	CryptoMode
+
+
+
+ * The showPgpSendError method receives requests from:
+-	MessageCompose
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientMvpView
+
+
+
+ * The getBccAddresses method receives requests from:
+-	MessageCompose
+-	RecipientMvpView
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientMvpView
+
+
+
+ * The builderSetProperties method receives requests from:
+-	MessageCompose
+-	RecipientPresenter
+-	QuotedMessagePresenter
+
+ * and delegate the request to: 
+-	OpenPgpApiManager
+-	MessageBuilder
+
+
+
+ * The onSwitchAccount method receives requests from:
+-	MessageCompose
+-	RecipientPresenter
+-	QuotedMessagePresenter
+-	RecipientPresenterTest
+
+ * and delegate the request to: 
+-	OpenPgpApiManager
+-	RecipientMvpView
+-	OpenPgpApiManagerCallback
+
+
+
+ * The asyncUpdateCryptoStatus method receives requests from:
+-	MessageCompose
+-	RecipientPresenter
+-	RecipientPresenterTest
+
+ * and delegate the request to: 
+-	OpenPgpProviderState
+-	OpenPgpApiManager
+-	CryptoMode
+-	AutocryptStatusInteractor
+
+
+
+ * The getCcAddresses method receives requests from:
+-	MessageCompose
+-	RecipientMvpView
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientMvpView
+
+
+
+ * The showPgpAttachError method receives requests from:
+-	AttachmentPresenter
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientMvpView
+
+
+
+ * The addCcAddresses method receives requests from:
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientMvpView
+-	Address
+
+
+
+ * The removeAlwaysBcc method receives requests from:
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientMvpView
+
+
+
+ * The onClickCryptoStatus method receives requests from:
+-	RecipientMvpView
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	OpenPgpApiManager
+-	RecipientMvpView
+
+
+
+ * The recipientTypeToRequestCode method receives requests from:
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientType
+
+
+
+ * The onRestoreInstanceState method receives requests from:
+-	MessageCompose
+-	AttachmentPresenter
+-	RecipientPresenter
+-	AccountSetupBasics
+-	AccountSetupOutgoing
+-	QuotedMessagePresenter
+-	FoldableLinearLayout
+-	MessageHeader
+
+ * and delegate the request to: 
+-	CryptoMode
+-	RecipientMvpView
+-	RecipientType
+
+
+
+ * The redrawCachedCryptoStatusIcon method receives requests from:
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	CryptoStatusDisplayType
+-	RecipientMvpView
+
+
+
+ * The toggleEncryptionState method receives requests from:
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	CryptoMode
+-	RecipientMvpView
+
+
+
+ * The addRecipientsFromAddresses method receives requests from:
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientMvpView
+-	RecipientType
+-	Address
+
+
+
+ * The onClickCryptoSpecialModeIndicator method receives requests from:
+-	RecipientMvpView
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	CryptoMode
+-	RecipientMvpView
+
+
+
+ * The getToAddresses method receives requests from:
+-	MessageCompose
+-	RecipientMvpView
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientMvpView
+
+
+
+ * The getAllRecipients method receives requests from:
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientMvpView
+
+
+
+ * The onBccFocused method receives requests from:
+-	RecipientMvpView
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientType
+
+
+
+ * The onClickRecipientExpander method receives requests from:
+-	RecipientMvpView
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientMvpView
+
+
+
+ * The onCryptoModeChanged method receives requests from:
+-	RecipientPresenter
+-	RecipientPresenterTest
+
+ * and delegate the request to: 
+-	CryptoMode
+-	CryptoMode
+
+
+
+ * The onCcFocused method receives requests from:
+-	RecipientMvpView
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientType
+
+
+
+ * The onClickToLabel method receives requests from:
+-	RecipientMvpView
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientMvpView
+
+
+
+ * The onMenuAddFromContacts method receives requests from:
+-	MessageCompose
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientMvpView
+-	RecipientType
+
+
+
+ * The hasContactPicker method receives requests from:
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	Contacts
+
+
+
+ * The addBccAddresses method receives requests from:
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientMvpView
+-	Address
+
+
+
+ * The initRecipientsFromDraftMessage method receives requests from:
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	Message
+
+
+
+ * The initPgpInlineFromDraftMessage method receives requests from:
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	Message
+
+
+
+ * The onClickCcLabel method receives requests from:
+-	RecipientMvpView
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	RecipientMvpView
+
+
+
+ * The initFromTrustIdAction method receives requests from:
+-	MessageCompose
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	CryptoMode
+
+
+
+ * The onSaveInstanceState method receives requests from:
+-	MessageCompose
+-	AttachmentPresenter
+-	RecipientPresenter
+-	AccountSetupBasics
+-	AccountSetupComposition
+-	AccountSetupIncoming
+-	AccountSetupOutgoing
+-	QuotedMessagePresenter
+-	FoldableLinearLayout
+-	MessageHeader
+
+ * and delegate the request to: 
+-	CryptoMode
+-	RecipientMvpView
+-	RecipientType
+
+

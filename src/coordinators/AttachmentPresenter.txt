@@ -1,0 +1,62 @@
+This AttachmentPresenter is responsible for delegating work between objects: 
+
+ * The loadNonInlineAttachments method receives requests from:
+-	MessageCompose
+-	AttachmentPresenter
+
+ * and delegate the request to: 
+-	MessageViewInfo
+
+
+
+ * The initAttachmentContentLoader method receives requests from:
+-	AttachmentPresenter
+
+ * and delegate the request to: 
+-	Attachment
+
+
+
+ * The addAttachment method receives requests from:
+-	MessageCompose
+-	AttachmentPresenter
+
+ * and delegate the request to: 
+-	AttachmentViewInfo
+
+
+
+ * The processMessageToForward method receives requests from:
+-	QuotedMessagePresenter
+-	MessageCompose
+-	AttachmentPresenter
+
+ * and delegate the request to: 
+-	MessageViewInfo
+
+
+
+ * The initAttachmentInfoLoader method receives requests from:
+-	AttachmentPresenter
+
+ * and delegate the request to: 
+-	Attachment
+
+
+
+ * The onClickAddAttachment method receives requests from:
+-	MessageCompose
+-	AttachmentPresenter
+
+ * and delegate the request to: 
+-	RecipientPresenter
+
+
+
+ * The addAttachmentAndStartLoader method receives requests from:
+-	AttachmentPresenter
+
+ * and delegate the request to: 
+-	Attachment
+
+

@@ -1,0 +1,40 @@
+This PendingMarkAllAsRead is responsible for delegating work between objects: 
+
+ * The execute method receives requests from:
+-	WebDavHttpClient
+-	K9
+-	MessageContainerView
+-	CoreService
+-	MailService
+-	RemoteControlService
+-	AttachmentTempFileProvider
+-	DecryptedFileProvider
+-	EmailProvider
+-	Storage
+-	MessageBuilder
+-	LocalMessage
+-	LockableDatabase
+-	LocalStore
+-	LocalFolder
+-	PendingAppend
+-	PendingCommand
+-	PendingEmptyTrash
+-	PendingExpunge
+-	PendingMarkAllAsRead
+-	PendingMoveOrCopy
+-	PendingSetFlag
+-	AccountList
+-	ImportSelectionDialog
+-	MessagingController
+-	PasswordPromptDialog
+-	Accounts
+-	MessageCompose
+-	AccountSettings
+-	AccountSetupCheckSettings
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	MessagingController
+-	Account
+
+

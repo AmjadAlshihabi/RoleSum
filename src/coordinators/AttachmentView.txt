@@ -1,0 +1,22 @@
+This AttachmentView is responsible for delegating work between objects: 
+
+ * The setCallback method receives requests from:
+-	ImapResponse
+-	AttachmentView
+-	LockedAttachmentView
+-	MessageContainerView
+
+ * and delegate the request to: 
+-	AttachmentViewCallback
+
+
+
+ * The setAttachment method receives requests from:
+-	AttachmentView
+-	LockedAttachmentView
+-	MessageContainerView
+
+ * and delegate the request to: 
+-	AttachmentViewInfo
+
+

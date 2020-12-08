@@ -1,0 +1,82 @@
+This LockScreenNotification is responsible for delegating work between objects: 
+
+ * The createPublicNotificationWithNewMessagesCount method receives requests from:
+-	LockScreenNotification
+
+ * and delegate the request to: 
+-	NotificationData
+
+
+
+ * The configureLockScreenNotification method receives requests from:
+-	DeviceNotifications
+-	LockScreenNotification
+
+ * and delegate the request to: 
+-	NotificationData
+
+
+
+ * The newInstance method receives requests from:
+-	WebDavStore
+-	FolderNameCodec
+-	ImapFolder
+-	ImapStore
+-	MimeMultipart
+-	K9WebViewClient
+-	MessageWebView
+-	CryptoInfoDialog
+-	MessageViewFragment
+-	RealDeviceIdleManager
+-	SettingsImporter
+-	DeviceIdleManager
+-	DeviceNotifications
+-	LockScreenNotification
+-	NewMailNotifications
+-	NotificationController
+-	PgpMessageBuilder
+-	SimpleMessageBuilder
+-	HtmlProcessor
+-	AttachmentCounter
+-	MessageFulltextCreator
+-	MessagePreviewCreator
+-	LocalStore
+-	MessageViewInfoExtractor
+-	AttachmentDownloadDialogFragment
+-	ConfirmationDialogFragment
+-	ProgressDialogFragment
+-	MessageListFragment
+-	MessagingController
+-	K9Activity
+-	K9ActivityCommon
+-	K9ListActivity
+-	MessageCompose
+-	MessageList
+-	AccountSetupCheckSettings
+-	AttachmentContentLoader
+-	PgpEnabledErrorDialog
+-	PgpEncryptDescriptionDialog
+-	PgpInlineDialog
+-	PgpSignOnlyDialog
+-	RecipientMvpView
+
+ * and delegate the request to: 
+-	NotificationController
+
+
+
+ * The createPublicNotificationWithSenderList method receives requests from:
+-	LockScreenNotification
+
+ * and delegate the request to: 
+-	NotificationData
+
+
+
+ * The createPublicNotification method receives requests from:
+-	LockScreenNotification
+
+ * and delegate the request to: 
+-	NotificationData
+
+

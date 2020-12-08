@@ -1,0 +1,71 @@
+This MessageListActivityListener is responsible for delegating work between objects: 
+
+ * The synchronizeMailboxFailed method receives requests from:
+-	MessageListActivityListener
+-	MemorizingMessagingListener
+-	MessagingControllerPushReceiver
+-	SimpleMessagingListener
+-	MessagingController
+-	ActivityListener
+-	Accounts
+-	FolderListAdapter
+-	FolderList
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The folderStatusChanged method receives requests from:
+-	K9
+-	MessageProvider
+-	MessageListActivityListener
+-	SimpleMessagingListener
+-	MessagingController
+-	ActivityListener
+-	Accounts
+-	FolderListAdapter
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The synchronizeMailboxStarted method receives requests from:
+-	MessageListActivityListener
+-	MemorizingMessagingListener
+-	SimpleMessagingListener
+-	MessagingController
+-	ActivityListener
+-	Accounts
+-	FolderListAdapter
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The updateForMe method receives requests from:
+-	MessageListActivityListener
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The synchronizeMailboxFinished method receives requests from:
+-	Listener
+-	MessageListActivityListener
+-	MemorizingMessagingListener
+-	MessagingControllerPushReceiver
+-	SimpleMessagingListener
+-	MessagingController
+-	ActivityListener
+-	Accounts
+-	FolderListAdapter
+-	FolderList
+
+ * and delegate the request to: 
+-	Account
+
+

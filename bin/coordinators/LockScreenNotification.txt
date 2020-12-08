@@ -1,0 +1,37 @@
+This LockScreenNotification is responsible for delegating work between objects: 
+
+ * The createPublicNotificationWithNewMessagesCount method receives requests from:
+-	LockScreenNotification
+
+ * and delegate the request to: 
+-	NotificationData
+
+
+
+ * The configureLockScreenNotification method receives requests from:
+-	DeviceNotifications
+-	LockScreenNotification
+-	DeviceNotificationsTest
+-	LockScreenNotificationTest
+
+ * and delegate the request to: 
+-	NotificationData
+
+
+
+ * The createPublicNotificationWithSenderList method receives requests from:
+-	LockScreenNotification
+
+ * and delegate the request to: 
+-	NotificationHolder
+-	NotificationData
+
+
+
+ * The createPublicNotification method receives requests from:
+-	LockScreenNotification
+
+ * and delegate the request to: 
+-	NotificationData
+
+

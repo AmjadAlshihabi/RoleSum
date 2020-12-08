@@ -1,0 +1,12 @@
+This K9ActivityCommon is responsible for delegating work between objects: 
+
+ * The setupGestureDetector method receives requests from:
+-	K9Activity
+-	K9ActivityCommon
+-	K9ListActivity
+-	MessageList
+
+ * and delegate the request to: 
+-	OnSwipeGestureListener
+
+

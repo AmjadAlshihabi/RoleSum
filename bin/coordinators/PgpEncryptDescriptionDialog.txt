@@ -1,0 +1,36 @@
+This PgpEncryptDescriptionDialog is responsible for delegating work between objects: 
+
+ * The newInstance method receives requests from:
+-	AttachmentCounter
+-	MessageFulltextCreator
+-	MessagePreviewCreator
+-	SettingsImporter
+-	ReplyToParserTest
+-	AttachmentResolverTest
+-	MessageViewInfoExtractorTest
+-	MessageCompose
+-	PgpEnabledErrorDialog
+-	PgpEncryptDescriptionDialog
+-	PgpInlineDialog
+-	PgpSignOnlyDialog
+-	RecipientMvpView
+-	AttachmentContentLoader
+-	AttachmentDownloadDialogFragment
+-	ConfirmationDialogFragment
+-	ProgressDialogFragment
+-	CryptoInfoDialog
+-	K9WebViewClient
+-	MessageWebView
+-	FolderNameCodec
+-	ImapStore
+-	FolderNameCodecTest
+-	Pop3ConnectionTest
+-	SmtpTransportTest
+-	WebDavStore
+-	TestMessageConstructionUtils
+-	TestTrustedSocketFactory
+
+ * and delegate the request to: 
+-	PgpEncryptDescriptionDialog
+
+

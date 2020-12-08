@@ -1,0 +1,21 @@
+This SendFailedNotifications is responsible for delegating work between objects: 
+
+ * The clearSendFailedNotification method receives requests from:
+-	NotificationController
+-	SendFailedNotifications
+-	MessagingController
+
+ * and delegate the request to: 
+-	Account
+
+
+
+ * The showSendFailedNotification method receives requests from:
+-	NotificationController
+-	SendFailedNotifications
+-	MessagingController
+
+ * and delegate the request to: 
+-	Account
+
+

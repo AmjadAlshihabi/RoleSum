@@ -1,0 +1,80 @@
+This AttachmentView is responsible for delegating work between objects: 
+
+ * The setAttachmentSize method receives requests from:
+-	AttachmentView
+
+ * and delegate the request to: 
+-	AttachmentViewInfo
+
+
+
+ * The onSaveButtonClick method receives requests from:
+-	AttachmentView
+
+ * and delegate the request to: 
+-	AttachmentViewInfo
+-	AttachmentViewCallback
+
+
+
+ * The displayAttachmentInformation method receives requests from:
+-	AttachmentView
+
+ * and delegate the request to: 
+-	AttachmentViewInfo
+
+
+
+ * The refreshThumbnail method receives requests from:
+-	AttachmentView
+-	MessageContainerView
+
+ * and delegate the request to: 
+-	AttachmentViewInfo
+
+
+
+ * The onViewButtonClick method receives requests from:
+-	AttachmentView
+
+ * and delegate the request to: 
+-	AttachmentViewInfo
+-	AttachmentViewCallback
+
+
+
+ * The setAttachment method receives requests from:
+-	AttachmentView
+-	LockedAttachmentView
+-	MessageContainerView
+
+ * and delegate the request to: 
+-	AttachmentViewInfo
+-	AttachmentViewInfo
+
+
+
+ * The setCallback method receives requests from:
+-	AttachmentView
+-	LockedAttachmentView
+-	MessageContainerView
+-	ImapResponse
+
+ * and delegate the request to: 
+-	AttachmentViewCallback
+-	AttachmentViewCallback
+
+
+
+ * The onFinishInflate method receives requests from:
+-	AttachmentView
+-	LockedAttachmentView
+-	MessageContainerView
+-	FoldableLinearLayout
+-	MessageHeader
+-	NonLockingScrollView
+
+ * and delegate the request to: 
+-	AttachmentViewInfo
+
+

@@ -1,0 +1,82 @@
+This PendingSetFlag is responsible for delegating work between objects: 
+
+ * The create method receives requests from:
+-	Folder<T extends Message>
+-	HttpGeneric
+-	WebDavFolder
+-	WebDavHttpClientFactory
+-	WebDavStore
+-	WebDavStoreUriCreator
+-	Pop3Folder
+-	ImapFolder
+-	ImapStore
+-	ImapStoreUriCreator
+-	CryptoInfoDialog
+-	NotificationActionCreator
+-	LocalFolder
+-	MigrationTo60
+-	ConfirmationDialogFragment
+-	MessageListAdapter
+-	PendingAppend
+-	PendingEmptyTrash
+-	PendingExpunge
+-	PendingMarkAllAsRead
+-	PendingMoveOrCopy
+-	PendingSetFlag
+-	AutocryptOperations
+-	MessagingController
+-	PasswordPromptDialog
+-	Accounts
+-	ConfirmationDialog
+-	MessageCompose
+-	NotificationDeleteConfirmation
+-	AccountSetupBasics
+-	OpenPgpAppSelectFragment
+-	PgpEnabledErrorDialog
+-	PgpEncryptDescriptionDialog
+-	PgpInlineDialog
+-	PgpSignOnlyDialog
+
+ * and delegate the request to: 
+-	Flag
+
+
+
+ * The execute method receives requests from:
+-	WebDavHttpClient
+-	K9
+-	MessageContainerView
+-	CoreService
+-	MailService
+-	RemoteControlService
+-	AttachmentTempFileProvider
+-	DecryptedFileProvider
+-	EmailProvider
+-	Storage
+-	MessageBuilder
+-	LocalMessage
+-	LockableDatabase
+-	LocalStore
+-	LocalFolder
+-	PendingAppend
+-	PendingCommand
+-	PendingEmptyTrash
+-	PendingExpunge
+-	PendingMarkAllAsRead
+-	PendingMoveOrCopy
+-	PendingSetFlag
+-	AccountList
+-	ImportSelectionDialog
+-	MessagingController
+-	PasswordPromptDialog
+-	Accounts
+-	MessageCompose
+-	AccountSettings
+-	AccountSetupCheckSettings
+-	RecipientPresenter
+
+ * and delegate the request to: 
+-	MessagingController
+-	Account
+
+

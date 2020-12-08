@@ -1,0 +1,23 @@
+This MessageWebView is responsible for delegating work between objects: 
+
+ * The setWebViewClient method receives requests from:
+-	QuotedMessageMvpView
+-	MessageWebView
+
+ * and delegate the request to: 
+-	K9WebViewClient
+-	AttachmentResolver
+-	OnPageFinishedListener
+
+
+
+ * The displayHtmlContentWithInlineAttachments method receives requests from:
+-	QuotedMessageMvpView
+-	MessageContainerView
+-	MessageWebView
+
+ * and delegate the request to: 
+-	AttachmentResolver
+-	OnPageFinishedListener
+
+
