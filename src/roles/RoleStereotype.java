@@ -8,13 +8,20 @@ public class RoleStereotype {
 	private String path; //
 	private HashMap <String, String> attributes = new HashMap <String, String> (); //
 	private List <String> parentClasses = new ArrayList<String>();//
+	private List <String> implementedInterfaces = new ArrayList<String>();//
 	private HashMap <String, String> componentClasses= new HashMap <String, String> ();//
 	private List <String> methods = new ArrayList<String>();//
 	private HashMap <String, String> imports = new HashMap <String, String>();//
 	private HashMap<String, List<String>> declarations = new HashMap<String, List<String>>();//
-//	private HashMap<String, HashMap<String, String>> declarations = new HashMap<String, HashMap<String, String>>();//
 	private HashMap <String, List<String>> customerClasses = new HashMap <String, List<String>>();//
-
+	
+	public List<String> getImplementedInterfaces() {
+		return implementedInterfaces;
+	}
+	public void setImplementedInterfaces(List<String> implementedInterfaces) {
+		this.implementedInterfaces = implementedInterfaces;
+	}
+	
 	public HashMap<String, List<String>> getCustomerClasses() {
 		return this.customerClasses;
 	}

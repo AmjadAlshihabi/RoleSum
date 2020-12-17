@@ -1,8 +1,0 @@
-the ThreadInfo Information Holder is responsible for:
-managing and holding information about:
-threadId
-msgId
-messageId
-rootId
-parentId
-

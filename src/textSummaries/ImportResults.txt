@@ -1,9 +1,0 @@
-the ImportResults Information Holder is responsible for:
-managing and holding information about:
-globalSettings
-importedAccounts
-erroneousAccounts
-
-Providing information to the following objects:
-SettingsImporter
-

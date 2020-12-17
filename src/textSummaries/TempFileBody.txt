@@ -1,4 +1,0 @@
-the TempFileBody Information Holder is responsible for:
-managing and holding information about:
-mFile
-

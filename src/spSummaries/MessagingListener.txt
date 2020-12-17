@@ -1,2 +1,0 @@
-the MessagingListener Service Provider is responsible for:
-

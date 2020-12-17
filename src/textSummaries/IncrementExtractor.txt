@@ -1,7 +1,0 @@
-the IncrementExtractor Information Holder is responsible for:
-managing and holding information about:
-count
-
-Providing information to the following objects:
-MessageProvider
-

@@ -1,7 +1,0 @@
-the Flowed Information Holder is responsible for:
-managing and holding information about:
-delSp
-
-Providing information to the following objects:
-Viewable
-

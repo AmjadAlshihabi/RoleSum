@@ -1,0 +1,7 @@
+# LocalBodyPart
+## This Information Holder is responsible for:
+### providing and holding information about: 
+* messagePartId
+* size
+* accountUuid
+* message

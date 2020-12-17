@@ -1,8 +1,0 @@
-the ImportContents Information Holder is responsible for:
-managing and holding information about:
-globalSettings
-accounts
-
-Providing information to the following objects:
-SettingsImporter
-

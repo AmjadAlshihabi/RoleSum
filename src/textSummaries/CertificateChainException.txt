@@ -1,8 +1,0 @@
-the CertificateChainException Information Holder is responsible for:
-managing and holding information about:
-serialVersionUID
-mCertChain
-
-Providing information to the following objects:
-CertificateValidationException
-

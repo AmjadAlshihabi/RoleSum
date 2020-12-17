@@ -1,9 +1,0 @@
-the OpenPgpApiHelper Service Provider is responsible for:
-
-providing the following services for other objects:
--	buildUserId(Identity identity)
-
-Offers services and configurations to the following objects
-OpenPgpApiHelper:
--	  buildUserId(Identity identity)
-

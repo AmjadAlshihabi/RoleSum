@@ -1,7 +1,0 @@
-the DataLocation Information Holder is responsible for:
-managing and holding information about:
-MISSING
-IN_DATABASE
-ON_DISK
-CHILD_PART_CONTAINS_DATA
-

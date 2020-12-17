@@ -1,9 +1,0 @@
-the ContiguousIdGroup Information Holder is responsible for:
-managing and holding information about:
-start
-end
-
-Providing information to the following objects:
-IdGrouper
-ImapCommandSplitter
-

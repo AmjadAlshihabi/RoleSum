@@ -1,9 +1,0 @@
-the IdentityContainer Information Holder is responsible for:
-managing and holding information about:
-identity
-account
-
-Providing information to the following objects:
-MessageCompose
-IdentityAdapter
-

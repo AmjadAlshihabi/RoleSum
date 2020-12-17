@@ -1,8 +1,0 @@
-the DefaultDebugStatus Information Holder is responsible for:
-managing and holding information about:
-enabled
-sensitive
-
-Providing information to the following objects:
-K9MailLib
-

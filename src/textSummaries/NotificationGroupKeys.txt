@@ -1,4 +1,0 @@
-the NotificationGroupKeys Information Holder is responsible for:
-managing and holding information about:
-NOTIFICATION_GROUP_KEY_PREFIX
-
