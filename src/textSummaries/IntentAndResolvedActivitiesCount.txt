@@ -1,8 +1,0 @@
-the IntentAndResolvedActivitiesCount Information Holder is responsible for:
-managing and holding information about:
-intent
-activitiesCount
-
-Providing information to the following objects:
-AttachmentController
-

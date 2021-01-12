@@ -1,8 +1,0 @@
-the StatsColumns Information Holder is responsible for:
-managing and holding information about:
-UNREAD_COUNT
-FLAGGED_COUNT
-
-Providing information to the following objects:
-EmailProvider
-

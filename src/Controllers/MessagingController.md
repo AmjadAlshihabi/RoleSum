@@ -1,0 +1,26 @@
+# MessagingController
+## This Controller is responsible for:
+* [NotificationActionService](../Controllers/NotificationActionService.md) (Controller)
+* [AttachmentController](../Controllers/AttachmentController.md) (Controller)
+* [MessageProvider](../Coordinators/MessageProvider.md) (Coordinator)
+* [WearNotifications](../Coordinators/WearNotifications.md) (Coordinator)
+* [UnreadWidgetProperties](../Coordinators/UnreadWidgetProperties.md) (Coordinator)
+* [MessagingControllerPushReceiver](../Coordinators/MessagingControllerPushReceiver.md) (Coordinator)
+* [CheckAccountTask](../Coordinators/CheckAccountTask.md) (Coordinator)
+* [Accounts](../Coordinators/Accounts.md) (Coordinator)
+* [AttachmentDownloadDialogFragment](../Interfacers/AttachmentDownloadDialogFragment.md) (Interfacer)
+* [MessageViewFragment](../Interfacers/MessageViewFragment.md) (Interfacer)
+* [MessageListFragment](../Interfacers/MessageListFragment.md) (Interfacer)
+* [NotificationDeleteConfirmation](../Interfacers/NotificationDeleteConfirmation.md) (Interfacer)
+* [Listener](../ServiceProviders/Listener.md) (Service Provider)
+* [SaveMessageTask](../ServiceProviders/SaveMessageTask.md) (Service Provider)
+* [LocalMessageLoader](../ServiceProviders/LocalMessageLoader.md) (Service Provider)
+* [PollService](../ServiceProviders/PollService.md) (Service Provider)
+* [MessagesQueryHandler](../Structurers/MessagesQueryHandler.md) (Structurer)
+### controlling tasks with the following methods 
+* clearCertificateErrorNotifications(Account account, CheckDirection direction)
+* markMessageAsReadOnView(Account account, LocalMessage message)
+* putCommand(BlockingQueue<Command> queue, String description, MessagingListener listener,
+            Runnable runnable, boolean isForeground)
+* notifyUserIfCertificateProblem(Account account, Exception exception, boolean incoming)
+* saveDraft(final Account account, final Message message, long existingDraftId, boolean saveRemotely)

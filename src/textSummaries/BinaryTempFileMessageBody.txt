@@ -1,4 +1,0 @@
-the BinaryTempFileMessageBody Information Holder is responsible for:
-Serialization of object, list of overriden method:
-setEncoding(String encoding)throws MessagingException
-

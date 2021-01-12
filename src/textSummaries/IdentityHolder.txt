@@ -1,8 +1,0 @@
-the IdentityHolder Information Holder is responsible for:
-managing and holding information about:
-name
-description
-
-Providing information to the following objects:
-IdentityAdapter
-

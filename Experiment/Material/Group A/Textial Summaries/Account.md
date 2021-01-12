@@ -1,0 +1,264 @@
+# Account
+## This Information Holder is responsible for:
+### providing and holding information about: 
+* NO_OPENPGP_KEY
+* DEFAULT_QUOTE_STYLE
+* DEFAULT_QUOTED_TEXT_SHOWN
+* DEFAULT_REPLY_AFTER_QUOTE
+* DEFAULT_REMOTE_SEARCH_NUM_RESULTS
+* DEFAULT_MESSAGE_FORMAT_AUTO
+* isSignatureBeforeQuotedText
+* replyAfterQuote
+* maximumPolledMessageAge
+* notificationSetting
+* trashFolderName
+* syncRemoteDeletions
+* storeUri
+* folderNotifyNewMailMode
+* PREDEFINED_COLORS
+* notifySync
+* chipColor
+* pgpCryptoKey
+* expungePolicy
+* IDENTITY_EMAIL_KEY
+* notifyNewMail
+* alwaysShowCcBcc
+* readColorChip
+* compressionMap
+* inboxFolderName
+* OUTBOX
+* IDENTITY_NAME_KEY
+* markMessageAsReadOnView
+* defaultQuotedTextShown
+* accountUuid
+* quotePrefix
+* IDENTITY_DESCRIPTION_KEY
+* automaticCheckIntervalMinutes
+* allowRemoteSearch
+* messageFormatAuto
+* notifySelfNewMail
+* ringNotified
+* folderDisplayMode
+* draftsFolderName
+* isEnabled
+* unreadColorChip
+* notifyContactsMailOnly
+* STORE_URI_KEY
+* DEFAULT_QUOTE_PREFIX
+* ACCOUNT_DESCRIPTION_KEY
+* description
+* DEFAULT_STRIP_SIGNATURE
+* subscribedFoldersOnly
+* autoExpandFolderName
+* DEFAULT_MESSAGE_FORMAT
+* INBOX
+* messageReadReceipt
+* identities
+* DEFAULT_MESSAGE_READ_RECEIPT
+* maximumAutoDownloadMessageSize
+* displayCount
+* remoteSearchFullText
+* transportUri
+* spamFolderName
+* folderTargetMode
+* quoteStyle
+* flaggedReadColorChip
+* maxPushFolders
+* showPictures
+* alwaysBcc
+* folderSyncMode
+* messageFormat
+* goToUnreadMessageSearch
+* sentFolderName
+* accountNumber
+* remoteSearchNumResults
+* flaggedUnreadColorChip
+* archiveFolderName
+* folderPushMode
+* pushPollOnConnect
+* searchableFolders
+* sortAscending
+* idleRefreshMinutes
+* DEFAULT_SORT_TYPE
+* DEFAULT_SORT_ASCENDING
+* sortType
+* deletePolicy
+* latestOldMessageSeenTime
+* localStorageProviderId
+* stripSignature
+* lastSelectedFolderName
+* TRANSPORT_URI_KEY
+### Managing database tasks through the following methods:
+* save(Preferences preferences)
+* getStats(Context context)
+* loadUnreadCountForFolder(Context context, String folderName)
+### Providing information to the following objects 
+* Controller
+	* [AttachmentController](../Controllers/AttachmentController.md) 
+	* [NotificationActionService](../Controllers/NotificationActionService.md) 
+	* [MessagingController](../Controllers/MessagingController.md) 
+	* [K9](../Controllers/K9.md) 
+	* [MemorizingMessagingListener](../Controllers/MemorizingMessagingListener.md) 
+	* [MessageCompose](../Controllers/MessageCompose.md) 
+	* [RemoteControlService](../Controllers/RemoteControlService.md) 
+	* [MessageCryptoPresenter](../Controllers/MessageCryptoPresenter.md) 
+	* [UpgradeDatabaseBroadcastReceiver](../Controllers/UpgradeDatabaseBroadcastReceiver.md) 
+	* [Pop3Folder](../Controllers/Pop3Folder.md) 
+	* [MailService](../Controllers/MailService.md) 
+	* [NotificationController](../Controllers/NotificationController.md) 
+* Coordinator
+	* [AccountExtractor](../Coordinators/AccountExtractor.md) 
+	* [FontSizeSettings](../Coordinators/FontSizeSettings.md) 
+	* [AuthenticationErrorNotifications](../Coordinators/AuthenticationErrorNotifications.md) 
+	* [WearNotifications](../Coordinators/WearNotifications.md) 
+	* [PendingMarkAllAsRead](../Coordinators/PendingMarkAllAsRead.md) 
+	* [AccountColorExtractor](../Coordinators/AccountColorExtractor.md) 
+	* [PendingSetFlag](../Coordinators/PendingSetFlag.md) 
+	* [PendingMoveOrCopy](../Coordinators/PendingMoveOrCopy.md) 
+	* [MessageListActivityListener](../Coordinators/MessageListActivityListener.md) 
+	* [LockScreenNotification](../Coordinators/LockScreenNotification.md) 
+	* [MessagingControllerPushReceiver](../Coordinators/MessagingControllerPushReceiver.md) 
+	* [AccountsImportedDialog](../Coordinators/AccountsImportedDialog.md) 
+	* [PendingExpunge](../Coordinators/PendingExpunge.md) 
+	* [SendFailedNotifications](../Coordinators/SendFailedNotifications.md) 
+	* [GlobalSettings](../Coordinators/GlobalSettings.md) 
+	* [SyncNotifications](../Coordinators/SyncNotifications.md) 
+	* [NewMailNotifications](../Coordinators/NewMailNotifications.md) 
+	* [PendingEmptyTrash](../Coordinators/PendingEmptyTrash.md) 
+	* [PendingCommand](../Coordinators/PendingCommand.md) 
+	* [Accounts](../Coordinators/Accounts.md) 
+	* [CheckAccountTask](../Coordinators/CheckAccountTask.md) 
+	* [MessageProvider](../Coordinators/MessageProvider.md) 
+	* [RecipientPresenter](../Coordinators/RecipientPresenter.md) 
+	* [AccountNumberExtractor](../Coordinators/AccountNumberExtractor.md) 
+	* [CertificateErrorNotifications](../Coordinators/CertificateErrorNotifications.md) 
+	* [SearchAccount](../Coordinators/SearchAccount.md) 
+	* [PendingAppend](../Coordinators/PendingAppend.md) 
+	* [UnreadWidgetProperties](../Coordinators/UnreadWidgetProperties.md) 
+	* [SimpleDialog](../Coordinators/SimpleDialog.md) 
+	* [BaseNotifications](../Coordinators/BaseNotifications.md) 
+	* [DeleteUriExtractor](../Coordinators/DeleteUriExtractor.md) 
+	* [AccountClickListener](../Coordinators/AccountClickListener.md) 
+* Information Holder
+	* [Memory](../InformationHolders/Memory.md) 
+	* [WebDavStore](../InformationHolders/WebDavStore.md) 
+	* [ImportedAccount](../InformationHolders/ImportedAccount.md) 
+	* [Identity](../InformationHolders/Identity.md) 
+	* [K9RemoteControl](../InformationHolders/K9RemoteControl.md) 
+	* [LocalMimeMessage](../InformationHolders/LocalMimeMessage.md) 
+	* [LocalBodyPart](../InformationHolders/LocalBodyPart.md) 
+	* [ImportContents](../InformationHolders/ImportContents.md) 
+	* [LocalMessage](../InformationHolders/LocalMessage.md) 
+	* [NotificationGroupKeys](../InformationHolders/NotificationGroupKeys.md) 
+	* [ImportResults](../InformationHolders/ImportResults.md) 
+	* [SearchSpecification](../InformationHolders/SearchSpecification.md) 
+	* [Imported](../InformationHolders/Imported.md) 
+	* [IdentityContainer](../InformationHolders/IdentityContainer.md) 
+	* [AccountDescriptionPair](../InformationHolders/AccountDescriptionPair.md) 
+	* [BaseAccount](../InformationHolders/BaseAccount.md) 
+	* [FontSizes](../InformationHolders/FontSizes.md) 
+	* [AccountDescription](../InformationHolders/AccountDescription.md) 
+	* [RealMigrationsHelper](../InformationHolders/RealMigrationsHelper.md) 
+	* [MessageReference](../InformationHolders/MessageReference.md) 
+	* [NotificationIds](../InformationHolders/NotificationIds.md) 
+	* [AccountStats](../InformationHolders/AccountStats.md) 
+	* [AccountColumns](../InformationHolders/AccountColumns.md) 
+	* [AccountHolder](../InformationHolders/AccountHolder.md) 
+	* [FolderInfoHolder](../InformationHolders/FolderInfoHolder.md) 
+	* [LocalFolder](../InformationHolders/LocalFolder.md) 
+* Interfacer
+	* [ImportSelectionDialog](../Interfacers/ImportSelectionDialog.md) 
+	* [Prefs](../Interfacers/Prefs.md) 
+	* [WelcomeMessage](../Interfacers/WelcomeMessage.md) 
+	* [EditIdentity](../Interfacers/EditIdentity.md) 
+	* [ChooseIdentity](../Interfacers/ChooseIdentity.md) 
+	* [AccountSetupIncoming](../Interfacers/AccountSetupIncoming.md) 
+	* [ChooseFolder](../Interfacers/ChooseFolder.md) 
+	* [MessageListAdapter](../Interfacers/MessageListAdapter.md) 
+	* [MessageListFragment](../Interfacers/MessageListFragment.md) 
+	* [PasswordPromptDialog](../Interfacers/PasswordPromptDialog.md) 
+	* [AccountSetupOptions](../Interfacers/AccountSetupOptions.md) 
+	* [FolderList](../Interfacers/FolderList.md) 
+	* [FolderListAdapter](../Interfacers/FolderListAdapter.md) 
+	* [AccountSetupOutgoing](../Interfacers/AccountSetupOutgoing.md) 
+	* [ManageIdentities](../Interfacers/ManageIdentities.md) 
+	* [AccountList](../Interfacers/AccountList.md) 
+	* [ActionModeCallback](../Interfacers/ActionModeCallback.md) 
+	* [FolderSettings](../Interfacers/FolderSettings.md) 
+	* [NotificationDeleteConfirmation](../Interfacers/NotificationDeleteConfirmation.md) 
+	* [AccountSetupAccountType](../Interfacers/AccountSetupAccountType.md) 
+	* [AccountsAdapter](../Interfacers/AccountsAdapter.md) 
+	* [MessageHeader](../Interfacers/MessageHeader.md) 
+	* [MessageList](../Interfacers/MessageList.md) 
+	* [AccountsHandler](../Interfacers/AccountsHandler.md) 
+	* [AccountSetupComposition](../Interfacers/AccountSetupComposition.md) 
+	* [UnreadWidgetConfiguration](../Interfacers/UnreadWidgetConfiguration.md) 
+	* [LauncherShortcuts](../Interfacers/LauncherShortcuts.md) 
+	* [AccountSetupNames](../Interfacers/AccountSetupNames.md) 
+	* [AccountSetupCheckSettings](../Interfacers/AccountSetupCheckSettings.md) 
+	* [MessageTopView](../Interfacers/MessageTopView.md) 
+	* [MessageViewFragment](../Interfacers/MessageViewFragment.md) 
+	* [AccountSettings](../Interfacers/AccountSettings.md) 
+	* [AccountSetupBasics](../Interfacers/AccountSetupBasics.md) 
+* Service Provider
+	* [AccountCreator](../ServiceProviders/AccountCreator.md) 
+	* [MigrationTo41](../ServiceProviders/MigrationTo41.md) 
+	* [MigrationTo43](../ServiceProviders/MigrationTo43.md) 
+	* [MessageActions](../ServiceProviders/MessageActions.md) 
+	* [StorageListenerImplementation](../ServiceProviders/StorageListenerImplementation.md) 
+	* [MessageLoaderHelper](../ServiceProviders/MessageLoaderHelper.md) 
+	* [EmailProvider](../ServiceProviders/EmailProvider.md) 
+	* [SetPasswordsAsyncTask](../ServiceProviders/SetPasswordsAsyncTask.md) 
+	* [SimpleMessagingListener](../ServiceProviders/SimpleMessagingListener.md) 
+	* [MigrationTo50](../ServiceProviders/MigrationTo50.md) 
+	* [MigrationTo51](../ServiceProviders/MigrationTo51.md) 
+	* [MoveAccountAsyncTask](../ServiceProviders/MoveAccountAsyncTask.md) 
+	* [NotificationContentCreator](../ServiceProviders/NotificationContentCreator.md) 
+	* [AttachmentInfoExtractor](../ServiceProviders/AttachmentInfoExtractor.md) 
+	* [MessageActor](../ServiceProviders/MessageActor.md) 
+	* [MessageHelper](../ServiceProviders/MessageHelper.md) 
+	* [SmtpTransport](../ServiceProviders/SmtpTransport.md) 
+	* [SaveMessageTask](../ServiceProviders/SaveMessageTask.md) 
+	* [MessagingListener](../ServiceProviders/MessagingListener.md) 
+	* [ImapConnection](../ServiceProviders/ImapConnection.md) 
+	* [ReplyToParser](../ServiceProviders/ReplyToParser.md) 
+	* [FolderListHandler](../ServiceProviders/FolderListHandler.md) 
+	* [SqlQueryBuilder](../ServiceProviders/SqlQueryBuilder.md) 
+	* [K9AccountReceptor](../ServiceProviders/K9AccountReceptor.md) 
+	* [UnavailableAccountException](../ServiceProviders/UnavailableAccountException.md) 
+	* [ActivityListener](../ServiceProviders/ActivityListener.md) 
+	* [OAuth2TokenProvider](../ServiceProviders/OAuth2TokenProvider.md) 
+	* [LocalStore](../ServiceProviders/LocalStore.md) 
+	* [ExportAsyncTask](../ServiceProviders/ExportAsyncTask.md) 
+	* [UnreadQueryHandler](../ServiceProviders/UnreadQueryHandler.md) 
+	* [DatabaseUpgradeService](../ServiceProviders/DatabaseUpgradeService.md) 
+	* [SettingsImporter](../ServiceProviders/SettingsImporter.md) 
+	* [MlfUtils](../ServiceProviders/MlfUtils.md) 
+	* [MessageListFragmentListener](../ServiceProviders/MessageListFragmentListener.md) 
+	* [IdentityHelper](../ServiceProviders/IdentityHelper.md) 
+	* [Listener](../ServiceProviders/Listener.md) 
+	* [LocalMessageLoader](../ServiceProviders/LocalMessageLoader.md) 
+	* [SendMessageTask](../ServiceProviders/SendMessageTask.md) 
+	* [DeviceNotifications](../ServiceProviders/DeviceNotifications.md) 
+	* [NotificationActionCreator](../ServiceProviders/NotificationActionCreator.md) 
+	* [LoadAccounts](../ServiceProviders/LoadAccounts.md) 
+	* [RemoteControlReceiver](../ServiceProviders/RemoteControlReceiver.md) 
+	* [ChooseAccount](../ServiceProviders/ChooseAccount.md) 
+	* [ListImportContentsAsyncTask](../ServiceProviders/ListImportContentsAsyncTask.md) 
+	* [AccountsQueryHandler](../ServiceProviders/AccountsQueryHandler.md) 
+	* [AccountReceiver](../ServiceProviders/AccountReceiver.md) 
+	* [SettingsExporter](../ServiceProviders/SettingsExporter.md) 
+	* [ImportAsyncTask](../ServiceProviders/ImportAsyncTask.md) 
+	* [AttachmentProvider](../ServiceProviders/AttachmentProvider.md) 
+* Structurer
+	* [MessagesQueryHandler](../Structurers/MessagesQueryHandler.md) 
+	* [QuotedMessagePresenter](../Structurers/QuotedMessagePresenter.md) 
+	* [EmailProviderCache](../Structurers/EmailProviderCache.md) 
+	* [LocalPart](../Structurers/LocalPart.md) 
+	* [MessageInfoHolderRetrieverListener](../Structurers/MessageInfoHolderRetrieverListener.md) 
+	* [MigrationsHelper](../Structurers/MigrationsHelper.md) 
+	* [IdentityAdapter](../Structurers/IdentityAdapter.md) 
+	* [NotificationData](../Structurers/NotificationData.md) 
+	* [Message](../Structurers/Message.md) 
+	* [LocalSearch](../Structurers/LocalSearch.md) 
+	* [Preferences](../Structurers/Preferences.md) 

@@ -1,2 +1,0 @@
-the NodeFilter Service Provider is responsible for:
-

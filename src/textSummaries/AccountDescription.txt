@@ -1,9 +1,0 @@
-the AccountDescription Information Holder is responsible for:
-managing and holding information about:
-name
-uuid
-
-Providing information to the following objects:
-SettingsImporter
-AccountDescriptionPair
-

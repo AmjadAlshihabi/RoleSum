@@ -1,1 +1,0 @@
-the AuthorizationException Information Holder is responsible for:

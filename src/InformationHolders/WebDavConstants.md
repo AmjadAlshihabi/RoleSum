@@ -1,0 +1,14 @@
+# WebDavConstants
+## This Information Holder is responsible for:
+### providing and holding information about: 
+* DAV_MAIL_TRASH_FOLDER
+* DAV_MAIL_INBOX_FOLDER
+* DAV_MAIL_OUTBOX_FOLDER
+* DAV_MAIL_SPAM_FOLDER
+* DAV_MAIL_DRAFTS_FOLDER
+* AUTH_TYPE_BASIC
+* AUTH_TYPE_NONE
+* AUTH_TYPE_FORM_BASED
+* DAV_MAIL_SENT_FOLDER
+* EMPTY_STRING_ARRAY
+* DAV_MAIL_SEND_FOLDER

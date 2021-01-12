@@ -1,9 +1,0 @@
-the ConnectionSecurityHolder Information Holder is responsible for:
-managing and holding information about:
-connectionSecurity
-resources
-
-Providing information to the following objects:
-AccountSetupIncoming
-AccountSetupOutgoing
-

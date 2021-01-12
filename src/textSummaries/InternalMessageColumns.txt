@@ -1,9 +1,0 @@
-the InternalMessageColumns Information Holder is responsible for:
-managing and holding information about:
-DELETED
-EMPTY
-MIME_TYPE
-
-Providing information to the following objects:
-EmailProvider
-

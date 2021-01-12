@@ -1,9 +1,0 @@
-the Imported Information Holder is responsible for:
-managing and holding information about:
-contentVersion
-globalSettings
-accounts
-
-Providing information to the following objects:
-SettingsImporter
-

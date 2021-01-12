@@ -1,6 +1,0 @@
-the BaseAccount Information Holder is responsible for:
-Providing information to the following objects:
-SearchAccount
-AccountList
-AccountsAdapter
-
